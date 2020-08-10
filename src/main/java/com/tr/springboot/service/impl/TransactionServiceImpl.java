@@ -20,7 +20,7 @@ public class TransactionServiceImpl implements TransactionService {
     public void beforeTransactionUpdate() {
         Transaction t = new Transaction();
         t.setId(2);
-        t.setValue4(333);
+        t.setValue4(123);
         transactionMapper.updateById(t);
 
         /**
@@ -39,32 +39,47 @@ public class TransactionServiceImpl implements TransactionService {
         transactionMapper.updateById(t1);
 
         /**
-         * 调用其他非事务方法
-         * 测试发现：该方法也受事务影响并回滚
+         * 事务方法内部调用其他非事务方法
+         * 测试结果：该方法也受事务影响回滚
          */
         afterTransactionUpdate();
+
+        /**
+         * 事务方法内部调用其他事务方法
+         * 测试结果：所有执行都不生效
+         */
+        transactionUpdateOut();
 
         Transaction t2 = new Transaction();
         t2.setId(2);
         t2.setValue2(2);
-        /**
-         * 下面行代码：制造异常触发事务，t1、t2、t3 修改都不生效。
-         * 去掉方法上的事务注解，t1修改的数据生效，从出错的t2开始都不生效。
-         */
-        int e = 1 / 0;
         transactionMapper.updateById(t2);
 
         Transaction t3 = new Transaction();
         t3.setId(2);
         t3.setValue3(3);
+        /**
+         * 下面行代码：制造异常触发事务，t1、t2、t3 修改都不生效。
+         * 去掉方法上的事务注解，t1修改的数据生效，从出错的t2开始都不生效。
+         */
+        int e = 1 / 0;
         transactionMapper.updateById(t3);
 
     }
 
     public void afterTransactionUpdate() {
         Transaction t = new Transaction();
+        t.setId(3);
+        t.setValue4(223);
+        transactionMapper.updateById(t);
+    }
+
+    @Transactional
+    public void transactionUpdateOut() {
+        Transaction t = new Transaction();
         t.setId(2);
-        t.setValue5(555);
+        t.setValue5(999);
+//        int e = 1 / 0;
         transactionMapper.updateById(t);
     }
 
