@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @date 2020-08-09 21:56
  */
-@Api(tags = "Redis", description = "Redis")
+@Api(tags = "Redis")
 @RestController
 public class RedisController {
 

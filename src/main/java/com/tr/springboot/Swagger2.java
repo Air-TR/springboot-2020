@@ -21,20 +21,22 @@ public class Swagger2 {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-//                .tags(new Tag("Test", "测试"), getTags())
+                .tags(new Tag("Hello", "Hello"), getTags())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.tr.springboot.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
-//    private Tag[] getTags() {
-//        Tag[] tags = {
-//                new Tag("Transaction", "事务"),
-//                new Tag("Account", "账户"),
-//        };
-//        return tags;
-//    }
+    private Tag[] getTags() {
+        Tag[] tags = {
+                new Tag("Transaction", "事务"),
+                new Tag("Account", "账户"),
+                new Tag("Redis", "Redis"),
+                new Tag("RedisUtil", "Redis工具"),
+        };
+        return tags;
+    }
 
     private ApiInfo apiInfo() {
 //        Contact contact = new Contact("TR", "http://www.google.com/", "tr1838@163.com");

@@ -19,7 +19,7 @@ import java.util.Set;
  * @author taorun
  * 2020-08-09 18:29
  */
-@Api(tags = "RedisUtil", description = "RedisUtil")
+@Api(tags = "RedisUtil")
 @RestController
 @RequestMapping(value = "/redis/util")
 public class RedisUtilController {

@@ -8,7 +8,13 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@Api(tags = "Transaction", description = "事务")
+/**
+ * 事务测试类（AccountController 也是事务测试类）
+ *
+ * @author TR
+ * @date 8/10/2020 4:06 PM
+ */
+@Api(tags = "Transaction")
 @RestController
 public class TransactionController {
 
@@ -17,6 +23,25 @@ public class TransactionController {
 
     @Autowired
     private TransactionRepository transactionRepository;
+
+    @Autowired
+    private TransactionService transactionService;
+
+    @GetMapping("/test-transaction")
+    public void testTransaction() {
+        transactionService.transactionUpdate();
+    }
+
+    @GetMapping("/test-transaction-before")
+    public void beforeTransactionUpdate() {
+        transactionService.beforeTransactionUpdate();
+    }
+
+    @GetMapping("/reset-data")
+    public void resetData() {
+        Transaction t = new Transaction(2,0,0,0,0,0);
+        transactionRepository.save(t);
+    }
 
 //    @PostMapping("/transactions")
 //    public void create(@RequestBody Transaction transaction) {
@@ -45,25 +70,5 @@ public class TransactionController {
 //    public void delete(@PathVariable Integer id) {
 //        transactionRepository.deleteById(id);
 //    }
-
-
-    @Autowired
-    private TransactionService transactionService;
-
-    @GetMapping("/test-transaction")
-    public void testTransaction() {
-        transactionService.transactionUpdate();
-    }
-
-    @GetMapping("/test-transaction-before")
-    public void beforeTransactionUpdate() {
-        transactionService.beforeTransactionUpdate();
-    }
-
-    @GetMapping("/reset-data")
-    public void resetData() {
-        Transaction t = new Transaction(2,0,0,0,0,0);
-        transactionRepository.save(t);
-    }
 
 }
