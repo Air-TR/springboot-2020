@@ -4,11 +4,11 @@ import com.tr.springboot.dao.jpa.AccountRepository;
 import com.tr.springboot.entity.Account;
 import com.tr.springboot.service.AccountService;
 import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 
 /**
@@ -16,17 +16,16 @@ import java.math.BigDecimal;
  *
  * @author TR
  * @date 8/10/2020 4:05 PM
- * @params
  */
 @Api(tags = "Account")
 @RestController
 @RequestMapping("/account")
 public class AccountController {
 
-    @Autowired
+    @Resource
     private AccountService accountService;
 
-    @Autowired
+    @Resource
     private AccountRepository accountRepository;
 
     /**
