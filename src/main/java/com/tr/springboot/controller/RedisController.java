@@ -1,10 +1,10 @@
 package com.tr.springboot.controller;
 
 import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class RedisController {
 
-    @Autowired
+    @Resource
     private RedisTemplate redisTemplate;
 
     @GetMapping("/redis/set-five-data")

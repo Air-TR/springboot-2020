@@ -1,4 +1,4 @@
-package com.tr.springboot.test;
+package com.tr.springboot.test.thread;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
  * 线程池测试样例
  */
 public class ThreadPool {
+
     private static ExecutorService executor = Executors.newFixedThreadPool(3);
     private static Task task;
 
