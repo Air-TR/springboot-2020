@@ -1,4 +1,4 @@
-package com.tr.springboot.test.lock;
+package com.tr.springboot.java.lock;
 
 import org.assertj.core.util.DateUtil;
 

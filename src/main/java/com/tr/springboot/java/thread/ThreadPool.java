@@ -1,4 +1,4 @@
-package com.tr.springboot.test.thread;
+package com.tr.springboot.java.thread;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;

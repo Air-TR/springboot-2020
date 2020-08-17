@@ -1,4 +1,4 @@
-package com.tr.springboot.test.lock;
+package com.tr.springboot.java.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
