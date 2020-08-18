@@ -39,7 +39,7 @@ class Task extends Thread {
         System.out.println("当前执行了：" + ThreadNum);
         try {
             Random random = new Random();
-            int sleep = random.nextInt(1) + 3;
+            int sleep = random.nextInt(5) + 3;
             System.out.println(ThreadNum + ">>停止" + sleep + "秒");
             Thread.sleep(sleep * 1000);
         } catch (InterruptedException e) {
