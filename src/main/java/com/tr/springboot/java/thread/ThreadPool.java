@@ -1,6 +1,5 @@
 package com.tr.springboot.java.thread;
 
-import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,38 +13,22 @@ public class ThreadPool {
 
     public static void main(String[] args) {
         ThreadPool threadPool = new ThreadPool();
-        int ThreadNum = 0;
-        while (ThreadNum < 6) {
-            ThreadNum++;
-            threadPool.start(ThreadNum);
+        int threadNum = 0;
+        while (threadNum < 9) {
+            threadNum++;
+            threadPool.start(threadNum);
         }
+        /**
+         * shutdown() 只是将线程池的状态设置为 SHUTDOWN 状态，正在执行的任务会继续执行下去，没有被执行的则中断。
+         * shutdownNow() 则是将线程池的状态设置为 STOP，正在执行的任务则被停止，没被执行任务的则返回。
+         */
+        executor.shutdown();    // 等正在执行的任务执行完再关闭
+//        executor.shutdownNow(); // 直接关闭
     }
 
-    private void start(final int ThreadNum) {
-        task = new Task(ThreadNum);
-        executor.execute(task);
-    }
-}
-
-class Task extends Thread {
-    private int ThreadNum;
-
-    Task(int temp) {
-        ThreadNum = temp;
+    private void start(final int threadNum) {
+        task = new Task(threadNum); // 创建任务
+        executor.execute(task);     // 线程池执行任务
     }
 
-    public void run() {
-        System.out.println(super.getName());
-        System.out.println("当前执行了：" + ThreadNum);
-        try {
-            Random random = new Random();
-            int sleep = random.nextInt(5) + 3;
-            System.out.println(ThreadNum + ">>停止" + sleep + "秒");
-            Thread.sleep(sleep * 1000);
-        } catch (InterruptedException e) {
-            System.out.println("执行过程中出现线程暂停异常" + e);
-        }
-        System.out.println(ThreadNum + ">>执行完成");
-        System.gc();
-    }
 }
