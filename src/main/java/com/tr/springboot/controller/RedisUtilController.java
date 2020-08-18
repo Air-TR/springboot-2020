@@ -1,6 +1,6 @@
 package com.tr.springboot.controller;
 
-import com.tr.springboot.utils.RedisUtil;
+import com.tr.springboot.java.redis.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

@@ -1,4 +1,4 @@
-package com.tr.springboot.utils;
+package com.tr.springboot.java.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundListOperations;
@@ -246,7 +246,7 @@ public class RedisUtil {
     }
 
     /**
-     * 向一张hash表中放入数据,如果不存在将创建
+     * 向一张hash表中放入数据并设置时间,如果不存在将创建
      *
      * @param key   键
      * @param item  项
@@ -363,7 +363,7 @@ public class RedisUtil {
     }
 
     /**
-     * 将set数据放入缓存
+     * 将set数据放入缓存并设置时间
      *
      * @param key    键
      * @param time   时间(秒)
@@ -484,7 +484,7 @@ public class RedisUtil {
     }
 
     /**
-     * 将list放入缓存
+     * 将list放入缓存并设置时间
      *
      * @param key   键
      * @param value 值
@@ -522,7 +522,7 @@ public class RedisUtil {
     }
 
     /**
-     * 将list放入缓存
+     * 将list放入缓存并设置时间
      *
      * @param key   键
      * @param value 值
@@ -610,11 +610,11 @@ public class RedisUtil {
      */
 //    public void addToListRight(String listKey, Status.ExpireEnum expireEnum, Object... values) {
 //        //绑定操作
-//        BoundListOperations<String, Object> boundValueOperations = redisTemplate.boundListOps(listKey);
+//        BoundListOperations<String, Object> boundListOperations = redisTemplate.boundListOps(listKey);
 //        //插入数据
-//        boundValueOperations.rightPushAll(values);
+//        boundListOperations.rightPushAll(values);
 //        //设置过期时间
-//        boundValueOperations.expire(expireEnum.getTime(),expireEnum.getTimeUnit());
+//        boundListOperations.expire(expireEnum.getTime(),expireEnum.getTimeUnit());
 //    }
 
     /**
@@ -627,9 +627,9 @@ public class RedisUtil {
      */
     public List<Object> rangeList(String listKey, long start, long end) {
         //绑定操作
-        BoundListOperations<String, Object> boundValueOperations = redisTemplate.boundListOps(listKey);
+        BoundListOperations<String, Object> boundListOperations = redisTemplate.boundListOps(listKey);
         //查询数据
-        return boundValueOperations.range(start, end);
+        return boundListOperations.range(start, end);
     }
 
     /**
@@ -637,10 +637,10 @@ public class RedisUtil {
      *
      * @param listKey
      */
-    public Object rifhtPop(String listKey) {
+    public Object rightPop(String listKey) {
         //绑定操作
-        BoundListOperations<String, Object> boundValueOperations = redisTemplate.boundListOps(listKey);
-        return boundValueOperations.rightPop();
+        BoundListOperations<String, Object> boundListOperations = redisTemplate.boundListOps(listKey);
+        return boundListOperations.rightPop();
     }
 
     //=========BoundListOperations 用法 End============
