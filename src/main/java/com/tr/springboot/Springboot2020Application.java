@@ -3,9 +3,11 @@ package com.tr.springboot;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@MapperScan("com.tr.springboot.dao.mybatis")
+@MapperScan("com.tr.springboot.web.dao.mybatis")
+@EnableScheduling
 public class Springboot2020Application {
 
     public static void main(String[] args) {

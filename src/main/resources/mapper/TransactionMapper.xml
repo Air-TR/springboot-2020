@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tr.springboot.dao.mybatis.TransactionMapper">
-    <resultMap id="BaseResultMap" type="com.tr.springboot.entity.Transaction">
+<mapper namespace="com.tr.springboot.web.dao.mybatis.TransactionMapper">
+    <resultMap id="BaseResultMap" type="com.tr.springboot.web.entity.Transaction">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="value1" jdbcType="INTEGER" property="value1"/>
         <result column="value2" jdbcType="INTEGER" property="value2"/>
@@ -25,7 +25,7 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
-    <insert id="insert" parameterType="com.tr.springboot.entity.Transaction">
+    <insert id="insert" parameterType="com.tr.springboot.web.entity.Transaction">
         insert into transaction (id, value1, value2,
           value3, value4, value5
           )
@@ -34,7 +34,7 @@
           )
     </insert>
 
-    <update id="updateById" parameterType="com.tr.springboot.entity.Transaction">
+    <update id="updateById" parameterType="com.tr.springboot.web.entity.Transaction">
         update transaction
         <set>
             <if test="value1 != null">

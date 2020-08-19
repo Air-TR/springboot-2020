@@ -23,7 +23,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .tags(new Tag("Hello", "Hello"), getTags())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.tr.springboot.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.tr.springboot.web.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
