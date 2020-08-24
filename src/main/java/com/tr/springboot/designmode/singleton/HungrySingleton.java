@@ -1,4 +1,4 @@
-package com.tr.springboot.java.singleton;
+package com.tr.springboot.designmode.singleton;
 
 /**
  * 饿汉单例实例

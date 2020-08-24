@@ -1,4 +1,4 @@
-package com.tr.springboot.java.singleton;
+package com.tr.springboot.designmode.singleton;
 
 /**
  * 第三种线程安全的懒汉式单例(C)

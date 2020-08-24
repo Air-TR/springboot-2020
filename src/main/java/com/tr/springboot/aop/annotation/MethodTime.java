@@ -17,8 +17,8 @@ import java.lang.annotation.Target;
 /**
  * @Target @Retention：https://blog.csdn.net/m0_37679452/article/details/81281310
  */
-@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.TYPE})
 public @interface MethodTime {
     String param() default "";
 }

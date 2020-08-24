@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 
 /**
  * AOP测试控制类
+ * 其实实现AOP最基础的只需要aspect包下的LogAspect类即可
  *
  * @author TR
  * @version 1.0
@@ -23,6 +24,7 @@ public class AopController {
     // http://localhost:8081/api/2020/aop/test
     @GetMapping("/aop/test")
     public String test() {
+//        int i = 1/0;
         System.out.println("AopController: AOP YES");
         return "AopController: AOP YES";
     }
