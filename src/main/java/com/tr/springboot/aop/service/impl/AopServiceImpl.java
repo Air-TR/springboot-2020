@@ -1,6 +1,6 @@
 package com.tr.springboot.aop.service.impl;
 
-import com.tr.springboot.aop.annotation.MethodTime;
+import com.tr.springboot.annotation.MethodTime;
 import com.tr.springboot.aop.service.AopService;
 import org.springframework.stereotype.Service;
 

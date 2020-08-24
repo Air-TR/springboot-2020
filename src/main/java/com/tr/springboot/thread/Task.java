@@ -1,4 +1,4 @@
-package com.tr.springboot.java.thread;
+package com.tr.springboot.thread;
 
 import java.util.Random;
 

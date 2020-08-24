@@ -1,4 +1,4 @@
-package com.tr.springboot.java.lock;
+package com.tr.springboot.lock;
 
 /**
  * Lock锁研究系列：测试类

@@ -11,11 +11,11 @@ import java.util.Date;
  * @date 8/19/2020 2:48 PM
  */
 // 反射注解
-public class AnnotationsRunner {
+public class AnnotationsTest {
 
     public static void main(String[] args) throws Exception {
         System.out.println("执行自定义注解开始时间：" + new Date());
-        Class clazz = Test.class;
+        Class clazz = AnnotationsUse.class;
         Method[] ms = clazz.getMethods();
         for (Method method : ms) {
             boolean flag = method.isAnnotationPresent(Annotations.class);

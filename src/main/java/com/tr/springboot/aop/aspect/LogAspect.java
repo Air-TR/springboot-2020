@@ -52,8 +52,14 @@ public class LogAspect {
      */
     @Around("logAspect()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable{
-        System.out.println("doAround");
-        return joinPoint.proceed();
+//        System.out.println("doAround");
+//        return joinPoint.proceed();
+        System.out.println("doAround + 方法开始时间:" + System.currentTimeMillis());
+        Object o = joinPoint.proceed();
+        System.out.println("doAround + 方法结束时间:" + System.currentTimeMillis());
+        return o;
     }
+
+
 
 }

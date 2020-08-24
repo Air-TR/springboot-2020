@@ -9,8 +9,9 @@ import java.util.Date;
  * @version 1.0
  * @date 8/19/2020 2:45 PM
  */
-public class DoSomeThing {
+public class AnnotationsUse {
 
+    @Annotations
     public void test() {
         System.out.println("---- 执行自定义注解 ----");
         System.out.println("执行自定义注解结束时间：" + new Date());

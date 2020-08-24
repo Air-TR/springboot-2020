@@ -1,6 +1,5 @@
-package com.tr.springboot.aop.aspect;
+package com.tr.springboot.annotation;
 
-import com.tr.springboot.aop.annotation.MethodTime;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,9 +23,9 @@ public class MethodTimeAspect {
 
     @Around("@annotation(methodTime)")
     public Object around(ProceedingJoinPoint joinPoint, MethodTime methodTime) throws Throwable {
-        System.out.println("方法开始时间是:" + System.currentTimeMillis());
+        System.out.println("MethodTimeAspect + 方法开始时间:" + System.currentTimeMillis());
         Object o = joinPoint.proceed();
-        System.out.println("方法结束时间是:" + System.currentTimeMillis());
+        System.out.println("MethodTimeAspect + 方法结束时间:" + System.currentTimeMillis());
         return o;
     }
 
