@@ -1,35 +1,44 @@
 package com.tr.springboot.thread;
 
-import java.util.Random;
+import com.tr.springboot.thread.service.ThreadService;
+import com.tr.springboot.thread.service.impl.ThreadServiceImpl;
 
 /**
- * 任务类
- * 创建任务供 ThreadPool 执行
- *
  * @author TR
  * @version 1.0
- * @date 8/18/2020 10:53 AM
+ * @date 8/25/2020 11:52 AM
  */
-class Task extends Thread {
+public class Task extends Thread {
+
+    ThreadService threadService = new ThreadServiceImpl();
+
     private int threadNum;
 
-    Task(int num) {
+    private int type;
+
+    Task(int num, int t) {
         threadNum = num;
+        type = t;
     }
 
     @Override
     public void run() {
-        System.out.println(super.getName());
-        System.out.println("当前执行了：" + threadNum);
-        try {
-            Random random = new Random();
-            int sleep = random.nextInt(5) + 2;
-            System.out.println(threadNum + ">>停止" + sleep + "秒");
-            Thread.sleep(sleep * 1000);
-        } catch (InterruptedException e) {
-            System.out.println("执行过程中出现线程暂停异常" + e);
+//        System.out.println(super.getName());
+//        System.out.println("当前执行了：" + threadNum + "-" + type);
+        switch (type) {
+            case 1:
+                threadService.methodA();
+                break;
+            case 2:
+                threadService.methodB();
+                break;
+            case 3:
+                threadService.methodC();
+                break;
+            default:
+                return;
         }
-        System.out.println(threadNum + ">>执行完成");
-        System.gc();
+        System.out.println("任务 " + threadNum + "-" + type + " >>执行完成" + "\n");
     }
 }
+
