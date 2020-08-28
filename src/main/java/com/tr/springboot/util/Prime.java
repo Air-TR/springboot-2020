@@ -5,7 +5,7 @@ package com.tr.springboot.util;
  *
  * @author TR
  * @version 1.0
- * @date 8/25/2020 3:42 PM
+ * @date 8/25/2020 3:43 PM
  */
 public class Prime {
 
@@ -17,7 +17,7 @@ public class Prime {
      * 判断是否是质数
      *
      * @author TR
-     * @date 8/25/2020 3:44 PM
+     * @date 8/25/2020 3:45 PM
      * @params [num]
      */
     public static boolean isPrime(int num) {
