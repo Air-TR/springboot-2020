@@ -22,7 +22,16 @@ public class LockDrawThread extends Thread {
 
     @Override
     public void run() {
-        account.draw(drawAmount);
+        /** 会先直接全部输出 */
+        System.out.println(LockAccount.num);
+
+        account.draw(drawAmount); // 线程执行取钱逻辑(同步阻塞)
+
+        /**
+         * 会等线程执行完依次输出
+         * 实验证明 static 变量被一个线程修改,其他线程获取到的是被修改后的结果
+         */
+        System.out.println(LockAccount.num);
     }
 
 }

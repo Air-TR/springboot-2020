@@ -33,6 +33,16 @@ public class ReentrantLockTest3 {
             this.lock2 = lock2;
         }
 
+        /**
+         * 使用这段代码
+         * 注释掉main方法中 thread0.interrupt(); 会出现死锁
+         * 放开main方法中 thread0.interrupt(); 不会出现死锁
+         * thread0.interrupt(); 中断了线程0,使得线程1得到资源正常结束
+         *
+         * lock() 与 lockInterruptibly() 比较区别在于：
+         * lock() 优先考虑获取锁，待获取锁成功后，才响应中断。
+         * lockInterruptibly() 优先考虑响应中断，而不是响应锁的普通获取或重入获取。
+         */
 //        @Override
 //        public void run() {
 //            try {
@@ -52,10 +62,10 @@ public class ReentrantLockTest3 {
         public void run() {
             try {
                 if (!lock1.tryLock()) {
-                    TimeUnit.MILLISECONDS.sleep(10);
+                    TimeUnit.MILLISECONDS.sleep(1000);
                 }
                 if (!lock2.tryLock()) {
-                    TimeUnit.MILLISECONDS.sleep(10);
+                    TimeUnit.MILLISECONDS.sleep(1000);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
