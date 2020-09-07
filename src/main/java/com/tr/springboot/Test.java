@@ -1,7 +1,5 @@
 package com.tr.springboot;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * 通用测试类
  *
@@ -12,9 +10,15 @@ import java.util.concurrent.TimeUnit;
 public class Test {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("1");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("2");
+        byte a = 1;
+        byte b = 2;
+        a += b;
+
+
+//        String s1 = "通话";
+//        String s2 = "重地";
+//        System.out.println(s1.hashCode());
+//        System.out.println(s2.hashCode());
     }
 
 }

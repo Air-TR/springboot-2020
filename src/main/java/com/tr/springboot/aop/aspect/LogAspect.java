@@ -19,7 +19,7 @@ public class LogAspect {
      * @Pointcut 切入点，其中execution用于使用切面的连接点。
      * 使用方法：execution(方法修饰符(可选) 返回类型 方法名 参数 异常模式(可选))，可以使用通配符匹配字符，*可以匹配任意字符。
      */
-    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..))") // 这边可以指定 controller/service 或者其他包
+    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..)) || execution(public * com.tr.springboot.aop.service.*.*(..))") // 这边可以指定 controller/service 或者其他包
     public void logAspect(){}
 
     /** @Before 在方法前执行 */
@@ -51,13 +51,12 @@ public class LogAspect {
      * 上面四个方法可以使用JoinPoint，JoinPoint包含了类名，被切面的方法名，参数等信息。
      */
     @Around("logAspect()")
-    public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable{
+    public void doAround(ProceedingJoinPoint joinPoint) throws Throwable{
 //        System.out.println("doAround");
 //        return joinPoint.proceed();
         System.out.println("doAround + 方法开始时间:" + System.currentTimeMillis());
-        Object o = joinPoint.proceed();
+        joinPoint.proceed();
         System.out.println("doAround + 方法结束时间:" + System.currentTimeMillis());
-        return o;
     }
 
 
