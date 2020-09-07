@@ -3,9 +3,6 @@ package com.tr.springboot.thread;
 import com.tr.springboot.thread.service.ThreadService;
 import com.tr.springboot.thread.service.impl.ThreadServiceImpl;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 /**
  * @author TR
  * @version 1.0
@@ -24,7 +21,6 @@ public class Test {
         new Thread(() -> threadService.methodA()).start();
         new Thread(() -> threadService.methodB()).start();
         new Thread(() -> threadService.methodC()).start();
-
     }
 
 }
