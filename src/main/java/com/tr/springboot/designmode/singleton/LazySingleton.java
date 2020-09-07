@@ -1,7 +1,7 @@
 package com.tr.springboot.designmode.singleton;
 
 /**
- * 懒汉单例实例
+ * 懒汉单例实例（非线程安全）
  *
  * @author TR
  * @version 1.0

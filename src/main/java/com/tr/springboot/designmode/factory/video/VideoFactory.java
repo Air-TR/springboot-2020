@@ -14,6 +14,9 @@ public class VideoFactory extends AbstractVideoFactory {
         return null;
     }
 
+    /**
+     * 这边的字母用 V 还是用什么都是随意的，原本是 T，用 V 只是因为 Video
+     */
     @Override
     public <V extends Video> V createVideo(Class<V> cls) {
         V product = null;
