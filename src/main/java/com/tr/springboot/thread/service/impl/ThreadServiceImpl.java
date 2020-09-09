@@ -16,7 +16,7 @@ public class ThreadServiceImpl implements ThreadService {
     @Override
     public String methodA() {
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("Finish A");
             return "A";
         } catch (InterruptedException e) {
@@ -40,7 +40,7 @@ public class ThreadServiceImpl implements ThreadService {
     @Override
     public String methodC() {
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(2);
             System.out.println("Finish C");
             return "C";
         } catch (InterruptedException e) {

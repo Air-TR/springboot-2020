@@ -34,6 +34,7 @@ public class Swagger2 {
                 new Tag("Account", "账户"),
                 new Tag("Redis", "Redis"),
                 new Tag("RedisUtil", "Redis工具"),
+                new Tag("AsynchronousThread", "异步线程"),
         };
         return tags;
     }
