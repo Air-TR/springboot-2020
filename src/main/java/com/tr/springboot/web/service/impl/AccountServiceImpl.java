@@ -52,7 +52,7 @@ public class AccountServiceImpl implements AccountService {
     public void transferAccounts(int fromAccountId, int toAccountId, BigDecimal account) {
         Account fromAccount = accountRepository.getOne(fromAccountId);
         fromAccount.setBalance(fromAccount.getBalance().subtract(account));
-        accountRepository.save(fromAccount); // fromUser扣钱​
+        accountRepository.save(fromAccount); // fromUser扣钱
 
         Account toAccount = accountRepository.getOne(toAccountId);
         toAccount.setBalance(toAccount.getBalance().add(account));

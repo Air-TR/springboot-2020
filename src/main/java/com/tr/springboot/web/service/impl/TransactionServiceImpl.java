@@ -17,6 +17,7 @@ public class TransactionServiceImpl implements TransactionService {
      * 普通方法内部调用事务方法 transactionUpdate()
      * 看事务方法出错后，之前非事务方法执行的结果是否生效
      */
+    @Override
     public void beforeTransactionUpdate() {
         Transaction t = new Transaction();
         t.setId(2);
@@ -32,6 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Transactional
+    @Override
     public void transactionUpdate() {
         Transaction t1 = new Transaction();
         t1.setId(2);
@@ -67,6 +69,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     }
 
+    @Override
     public void afterTransactionUpdate() {
         Transaction t = new Transaction();
         t.setId(3);
