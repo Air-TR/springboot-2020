@@ -1,4 +1,4 @@
-package com.tr.springboot.web.controller;
+package com.tr.springboot.redis.controller;
 
 import com.tr.springboot.redis.RedisUtil;
 import io.swagger.annotations.Api;

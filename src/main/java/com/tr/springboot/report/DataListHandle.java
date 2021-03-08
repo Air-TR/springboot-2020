@@ -44,37 +44,8 @@ public class DataListHandle {
     }
 
     static List<Map> handleListMap(List<DataList> dataLists) {
-        // 1.对各层级的维度划分
-        List<DataList> firstLevelList = new ArrayList<>();
-        List<DataList> secondLevelList = new ArrayList<>();
-        List<DataList> thirdLevelList = new ArrayList<>();
-        dataLists.forEach(dataList -> {
-            switch(dataList.getLatitude()){
-                case "cust" :
-                    firstLevelList.add(dataList);
-                    break; //可选
-                case "project" :
-                case "crdt" :
-                    secondLevelList.add(dataList);
-                    break; //可选
-                default : //可选
-                    thirdLevelList.add(dataList);
-            }
-        });
-//        System.out.println("第一层级：");
-//        firstLevelList.forEach(dataList -> {
-//            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
-//        });
-//        System.out.println("第二层级：");
-//        secondLevelList.forEach(dataList -> {
-//            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
-//        });
-//        System.out.println("第三层级：");
-//        thirdLevelList.forEach(dataList -> {
-//            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
-//        });
 
-
+        // 筛选所有维度交集的客户id
         List<List<String>> custIdLists = new ArrayList<>();
         for (int i = 0; i < dataLists.size(); i++) {
             List<String> custIdList = new ArrayList<>();
@@ -87,30 +58,80 @@ public class DataListHandle {
         System.out.println("所有维度交集客户id：");
         System.out.println(retainList);
 
-        // 第一步：清洗结果集
-        List<List<Map>> resultLists0 = new ArrayList<>();
+        // 根据所有维度交集的客户id，清洗结果集
+        List<DataList> washDataList = new ArrayList<>();
         if (retainList != null && !retainList.isEmpty()) {
             for (int i = 0; i < dataLists.size(); i++) {
-                List<Map> listMap = new ArrayList<>();
+                DataList dataList = new DataList();
+                dataList.setLatitude(dataLists.get(i).getLatitude());
+                List<Map> mapList = new ArrayList<>();
                 dataLists.get(i).getMapList().forEach(map -> {
                     retainList.forEach(custId -> {
                         if (custId.equals(map.get("custId"))) {
-                            listMap.add(map);
+                            mapList.add(map);
                             return;
                         }
                     });
                 });
-                resultLists0.add(listMap);
+                dataList.setMapList(mapList);
+                washDataList.add(dataList);
             }
             System.out.println("清洗结果集：");
-            resultLists0.forEach(list -> {
-                list.forEach(System.out::println);
+            washDataList.forEach(list -> {
+                list.getMapList().forEach(System.out::println);
                 System.out.println("-----------");
             });
         }
 
-        // 第二步：合并清洗结果集
-        List<List<Map>> resultLists1 = new ArrayList<>();
+        // 对清洗结果集，再把各维度按照层级划分不同的集合
+        List<DataList> firstLevelList = new ArrayList<>();
+        List<DataList> secondLevelList = new ArrayList<>();
+        List<DataList> thirdLevelList = new ArrayList<>();
+        washDataList.forEach(dataList -> {
+            switch(dataList.getLatitude()){
+                case "cust" :
+                    firstLevelList.add(dataList);
+                    break; //可选
+                case "project" :
+                case "crdt" :
+                    secondLevelList.add(dataList);
+                    break; //可选
+                default : //可选
+                    thirdLevelList.add(dataList);
+            }
+        });
+
+        System.out.println("第一层级：");
+        firstLevelList.forEach(dataList -> {
+            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
+        });
+        System.out.println("第二层级：");
+        secondLevelList.forEach(dataList -> {
+            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
+        });
+        System.out.println("第三层级：");
+        thirdLevelList.forEach(dataList -> {
+            System.out.println(dataList.getLatitude() + ", " + dataList.getMapList());
+        });
+
+        /**
+         *  一二级数据合并(暂不考虑不存在情况)
+         *      后期考虑剔除已合并的数据，减少遍历次数
+         */
+        List<Map> firAndSecMapList = new ArrayList<>();
+        firstLevelList.get(0).getMapList().forEach(firMapData -> {
+            // 假设第二级仅存在一个维度(这里即第二级只有项目维度)
+            secondLevelList.get(0).getMapList().forEach(secMapData -> {
+                if (secMapData.get(FIRST_LEVEL_MAIN_KEY).equals(firMapData.get(FIRST_LEVEL_MAIN_KEY))) {
+                    HashMap<String, Object> map = new HashMap<>();
+                    map.putAll(firMapData);
+                    map.putAll(secMapData);
+                    firAndSecMapList.add(map);
+                }
+            });
+        });
+        System.out.println("一二级别合并结果：");
+        firAndSecMapList.forEach(System.out::println);
 
 
         return null;

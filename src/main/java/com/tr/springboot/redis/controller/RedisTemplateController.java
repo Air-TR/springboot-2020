@@ -1,4 +1,4 @@
-package com.tr.springboot.web.controller;
+package com.tr.springboot.redis.controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,14 +15,14 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @date 2020-08-09 21:56
  */
-@Api(tags = "Redis")
+@Api(tags = "redisTemplate")
 @RestController
-public class RedisController {
+public class RedisTemplateController {
 
     @Resource
     private RedisTemplate redisTemplate;
 
-    @GetMapping("/redis/set-five-data")
+    @GetMapping("/redisTemplate/set-five-data")
     public void setFiveData() {
         redisTemplate.opsForValue().set("f", "File");
         redisTemplate.opsForValue().set("e", "Edit");
@@ -31,18 +31,18 @@ public class RedisController {
         redisTemplate.opsForValue().set("c", "Code");
     }
 
-    @GetMapping("/redis/set")
+    @GetMapping("/redisTemplate/set")
     public void set(@RequestParam String key, @RequestParam String value) {
         redisTemplate.opsForValue().set(key, value);
         redisTemplate.expire(key, 100, TimeUnit.SECONDS);
     }
 
-    @GetMapping("/redis/{id}")
+    @GetMapping("/redisTemplate/{id}")
     public Object get(@PathVariable String id) {
         return redisTemplate.opsForValue().get(id);
     }
 
-    @DeleteMapping("/redis/{id}")
+    @DeleteMapping("/redisTemplate/{id}")
     public void delete(@PathVariable String id) {
         redisTemplate.delete(id);
     }
@@ -53,7 +53,7 @@ public class RedisController {
      * 2020-08-09 22:41
      * @params []
      */
-    @DeleteMapping("/redis")
+    @DeleteMapping("/redisTemplate")
     public void delete() {
         Set<String> keys = redisTemplate.keys("*");
         redisTemplate.delete(keys);

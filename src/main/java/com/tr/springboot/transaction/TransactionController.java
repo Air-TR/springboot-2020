@@ -1,4 +1,4 @@
-package com.tr.springboot.web.controller;
+package com.tr.springboot.transaction;
 
 import com.tr.springboot.web.service.TransactionService;
 import com.tr.springboot.web.dao.jpa.TransactionRepository;

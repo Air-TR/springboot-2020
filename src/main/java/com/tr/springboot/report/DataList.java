@@ -11,8 +11,6 @@ public class DataList {
 
     private String latitude;
 
-    private String level;
-
     private List<Map> mapList;
 
     public String getLatitude() {
@@ -21,14 +19,6 @@ public class DataList {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
     }
 
     public List<Map> getMapList() {
