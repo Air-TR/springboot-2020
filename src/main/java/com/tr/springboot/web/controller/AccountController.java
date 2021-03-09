@@ -44,7 +44,7 @@ public class AccountController {
      * transfer2 中非事务方法生效，事务方法被回滚不生效
      * 二者唯一的区别：一个在Service调用事务方法，一个在Controller调用事务方法
      * 如同：A-普通Service方法 B-事务Service方法 C-普通Controller方法
-     *      A调用B，B出错，A B 都不受事务影响
+     *      A调用B，B出错，A B 都不受事务影响（前提：A、B在同一个Service中）
      *      C调用B，B出粗，C 不受事务影响，B 照样受事务影响
      *
      * 网上查阅资料：https://msd.misuland.com/pd/3127746505234974906

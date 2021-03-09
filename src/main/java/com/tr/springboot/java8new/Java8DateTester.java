@@ -48,7 +48,7 @@ public class Java8DateTester {
             System.out.println("今天是你的生日");
         } else System.out.println("今天不是你的生日");
 
-        /* 在现有时间基础上囧算之前之后的年、月、周、时、分、秒 */
+        /* 在现有时间基础上计算之前之后的年、月、周、时、分、秒 */
         LocalDateTime nowTime = LocalDateTime.now();
         System.out.println(nowTime); // 2020-10-30T15:58:02.369
         LocalDateTime afterTime = nowTime.plusHours(3);

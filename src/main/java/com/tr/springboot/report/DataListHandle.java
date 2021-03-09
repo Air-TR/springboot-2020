@@ -12,12 +12,7 @@ import java.util.Optional;
  */
 public class DataListHandle {
 
-    // 级别：
-    private final static String FIRST_LEVEL = "FIRST_LEVEL";
-    private final static String SECOND_LEVEL = "SECOND_LEVEL";
-    private final static String THIRD_LEVEL = "THIRD_LEVEL";
-
-    // 关系：
+    // 关联关系：
     private final static String FIRST_LEVEL_MAIN_KEY = "custId";
     private final static String SECOND_LEVEL_MAIN_KEY = "projectId";
     private final static String SECOND_LEVEL_INNER_KEY = "crdtId";
@@ -115,8 +110,8 @@ public class DataListHandle {
         });
 
         /**
-         *  一二级数据合并(暂不考虑不存在情况)
-         *      后期考虑剔除已合并的数据，减少遍历次数
+         * 一二级数据合并(暂不考虑不存在情况)
+         *     后期考虑剔除已合并的数据，减少遍历次数
          */
         List<Map> firAndSecMapList = new ArrayList<>();
         firstLevelList.get(0).getMapList().forEach(firMapData -> {
@@ -133,8 +128,24 @@ public class DataListHandle {
         System.out.println("一二级别合并结果：");
         firAndSecMapList.forEach(System.out::println);
 
+        /**
+         * 一二级合并后的数据与第三级合并
+         */
+        List<Map> allLevelList = new ArrayList<>();
+        firAndSecMapList.forEach(firAndSecMap -> {
+            thirdLevelList.get(0).getMapList().forEach(thirdMapData -> {
+                if (thirdMapData.get(SECOND_LEVEL_MAIN_KEY).equals(firAndSecMap.get(SECOND_LEVEL_MAIN_KEY))) {
+                    HashMap<String, Object> map = new HashMap<>();
+                    map.putAll(firAndSecMap);
+                    map.putAll(thirdMapData);
+                    allLevelList.add(map);
+                }
+            });
+        });
+        System.out.println("所有级别合并结果：");
+        allLevelList.forEach(System.out::println);
 
-        return null;
+        return allLevelList;
     }
 
     public static List<String> retainList(List<List<String>> elementLists) {
