@@ -5,7 +5,8 @@ public enum ResultEnum {
     UNKNOWN_ERROR(-1, "未知错误"),
     SUCCESS(0, "成功"),
     FAIL(1, "失败"),
-    DAO_EXCEPTION(2, "数据库异常")
+    DAO_EXCEPTION(2, "数据库异常"),
+    NO_LOGIN(3, "未登录")
     ;
 
     private Integer code;

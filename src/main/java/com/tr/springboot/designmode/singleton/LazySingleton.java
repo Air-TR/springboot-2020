@@ -9,7 +9,7 @@ package com.tr.springboot.designmode.singleton;
  */
 public class LazySingleton {
 
-    // 指向自己实例的私有静态引用
+    // 指向自己实例的私有静态引用，被动创建
     private static LazySingleton singleton;
 
     // 私有的构造方法

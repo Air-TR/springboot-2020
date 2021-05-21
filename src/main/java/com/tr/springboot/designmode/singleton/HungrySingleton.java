@@ -14,10 +14,10 @@ public class HungrySingleton {
     private static HungrySingleton singleton = new HungrySingleton();
 
     // 私有的构造方法
-    private HungrySingleton(){}
+    private HungrySingleton() {}
 
     // 以自己实例为返回值的静态的公有方法，静态工厂方法
-    public static HungrySingleton getSingleton(){
+    public static HungrySingleton getSingleton() {
         return singleton;
     }
 
