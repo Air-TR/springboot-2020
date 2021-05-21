@@ -9,22 +9,21 @@ import java.io.Reader;
 
 /**
  * @author rtao
- * @date 2020/11/17 11:25
+ * @date 2021/5/12 16:35
  */
 public class ReadJsonFileUtil {
 
     /**
      * 读取json文件，返回json串
-     * @author: rtao
-     * @date: 2020/11/17 11:25
-     **/
-    public static String readJsonFile(String filePath, String charsetName) {
+     */
+    public static String readJsonFile(String filePath) {
         String jsonStr = "";
         try {
             File jsonFile = new File(filePath);
             if (jsonFile.isFile() && jsonFile.exists()) {
                 FileReader fileReader = new FileReader(jsonFile);
-                Reader reader = new InputStreamReader(new FileInputStream(jsonFile), charsetName);
+
+                Reader reader = new InputStreamReader(new FileInputStream(jsonFile),"UTF-8");
                 int ch = 0;
                 StringBuffer sb = new StringBuffer();
                 while ((ch = reader.read()) != -1) {
