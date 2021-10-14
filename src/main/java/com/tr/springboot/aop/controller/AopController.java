@@ -25,6 +25,15 @@ public class AopController {
     @Resource
     private TestMethodTime testMethodTime;
 
+    /**
+     * @Author: TR
+     * http://localhost:8081/api/2020/aop/testAop
+     */
+    @GetMapping("/aop/testAop")
+    public String hello() {
+        return aopService.testAop();
+    }
+
     // http://localhost:8081/api/2020/aop/test
     @GetMapping("/aop/test")
     public String test() {

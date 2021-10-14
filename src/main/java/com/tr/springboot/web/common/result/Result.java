@@ -1,15 +1,14 @@
 package com.tr.springboot.web.common.result;
 
-
 public class Result<T> {
 
-    // 错误码
+    /** 返回码 */
     private Integer code;
 
-    // 提示信息
+    /** 提示信息 */
     private String msg;
 
-    // 返回数据
+    /** 返回数据 */
     private T data;
 
     public Integer getCode() {
