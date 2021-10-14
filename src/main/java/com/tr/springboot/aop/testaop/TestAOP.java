@@ -12,6 +12,9 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 /**
+ * 测试调用 AopController /aop/testAop
+ * 测试URL：http://localhost:8081/api/2020/aop/testAop
+ *
  * @author rtao
  * @date 2021/10/14 10:34
  */
