@@ -1,4 +1,4 @@
-package com.tr.springboot.collection.map;
+package com.tr.springboot.collection;
 
 import java.util.HashMap;
 import java.util.Iterator;

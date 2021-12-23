@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class TestAOP {
+public class AOPTest {
 
     /**
      * @Pointcut 标记的方法内不需要写代码，不执行，只是一个标记

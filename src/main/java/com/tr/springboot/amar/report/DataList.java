@@ -1,4 +1,4 @@
-package com.tr.springboot.report;
+package com.tr.springboot.amar.report;
 
 import java.util.List;
 import java.util.Map;

@@ -13,15 +13,15 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * redis配置类
+ * redis 配置类
  */
 @Configuration
-@EnableCaching //开启注解
+@EnableCaching // 开启注解
 public class RedisConfig extends CachingConfigurerSupport {
 
     /**
-     * redisTemplate相关配置
-     * 使redis支持插入对象
+     * redisTemplate 相关配置
+     * 使 redis 支持插入对象
      */
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
@@ -31,25 +31,25 @@ public class RedisConfig extends CachingConfigurerSupport {
         // 配置连接工厂
         template.setConnectionFactory(factory);
 
-        // 使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）
+        // 使用 Jackson2JsonRedisSerializer 来序列化和反序列化 redis 的 value 值（默认使用JDK的序列化方式）
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
 
         ObjectMapper om = new ObjectMapper();
 
-        // 指定要序列化的域，field,get和set,以及修饰符范围，ANY是都有包括private和public
+        // 指定要序列化的域，field,get 和 set,以及修饰符范围，ANY 是都有包括 private 和 public
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 
-        // 指定序列化输入的类型，类必须是非final修饰的，final修饰的类，比如String,Integer等会跑出异常
+        // 指定序列化输入的类型，类必须是非 final 修饰的，final 修饰的类，比如 String,Integer 等会跑出异常
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 
         jackson2JsonRedisSerializer.setObjectMapper(om);
 
-        // 使用StringRedisSerializer来序列化和反序列化redis的key
+        // 使用 StringRedisSerializer 来序列化和反序列化 redis 的 key
         template.setKeySerializer(new StringRedisSerializer());
-        // value采用json序列化
+        // value 采用 json 序列化
         template.setValueSerializer(jackson2JsonRedisSerializer);
 
-        // 设置hash key和value序列化模式
+        // 设置 hash key 和 value 序列化模式
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setHashValueSerializer(jackson2JsonRedisSerializer);
 
@@ -59,7 +59,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * 对hash类型的数据操作: 针对map类型的数据操作
+     * 对 hash 类型的数据操作: 针对 map 类型的数据操作
      *
      * @param redisTemplate
      * @return
@@ -70,7 +70,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * 对redis字符串类型数据操作： 简单K-V操作
+     * 对 redis 字符串类型数据操作： 简单 K-V 操作
      *
      * @param redisTemplate
      * @return
@@ -81,7 +81,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * 对链表类型的数据操作: 针对list类型的数据操作
+     * 对链表类型的数据操作: 针对 list 类型的数据操作
      *
      * @param redisTemplate
      * @return
@@ -92,7 +92,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * 对无序集合类型的数据操作： set类型数据操作
+     * 对无序集合类型的数据操作：set 类型数据操作
      *
      * @param redisTemplate
      * @return
@@ -103,7 +103,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * 对有序集合类型的数据操作 ：zset类型数据操作
+     * 对有序集合类型的数据操作：zset 类型数据操作
      *
      * @param redisTemplate
      * @return
