@@ -1,4 +1,4 @@
-package com.tr.springboot.util;
+package com.tr.springboot.autorun;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2021/8/17 11:10
  */
 @Component
-public class DemoApplicationRunner implements ApplicationRunner {
+public class AutoRunAfterSpringBootStart2 implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {

@@ -2,8 +2,8 @@ package com.tr.springboot.thread;
 
 import com.tr.springboot.thread.service.ThreadService;
 import com.tr.springboot.thread.service.impl.ThreadServiceImpl;
-import com.tr.springboot.web.entity.Entity;
 
+import java.time.LocalTime;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -19,32 +19,33 @@ public class CountDownLatchTest {
     private static ThreadService threadService = new ThreadServiceImpl();
 
     public static void main(String[] args) throws InterruptedException {
-        long start = System.currentTimeMillis();
+        System.out.println("main thread start ===> " + LocalTime.now());
 
+        /**
+         * new CountDownLatch(int count)
+         *  count 参数写几，就要 latch.countDown() 几次，不足会一直处于 latch.await() 等待不结束
+         *  若 latch.countDown() 次数大于 count 参数值，则前 count 个线程执行结束，就结束 latch.await() 等待
+         */
         final CountDownLatch latch = new CountDownLatch(3);
 
-        Entity entity = new Entity();
-
         new Thread(() -> {
-            entity.setV1(threadService.methodA());
+            threadService.methodA();
             latch.countDown();
         }).start();
 
         new Thread(() -> {
-            entity.setV2(threadService.methodB());
+            threadService.methodB();
             latch.countDown();
         }).start();
 
         new Thread(() -> {
-            entity.setV3(threadService.methodC());
+            threadService.methodC();
             latch.countDown();
         }).start();
 
         latch.await();
-        System.out.println(entity.toString());
 
-        long end = System.currentTimeMillis();
-        System.out.println("Time: " + (end - start) + "ms");
+        System.out.println("main thread over  ===> " + LocalTime.now());
     }
 
 }

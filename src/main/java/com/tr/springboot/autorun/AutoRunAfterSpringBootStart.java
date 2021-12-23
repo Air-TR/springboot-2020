@@ -1,4 +1,4 @@
-package com.tr.springboot.util;
+package com.tr.springboot.autorun;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @date 2021/8/17 11:23
  */
 @Component
-public class DemoCommandLineRunner implements CommandLineRunner {
+public class AutoRunAfterSpringBootStart implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {

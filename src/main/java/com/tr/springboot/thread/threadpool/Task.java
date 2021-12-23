@@ -1,4 +1,4 @@
-package com.tr.springboot.thread;
+package com.tr.springboot.thread.threadpool;
 
 import com.tr.springboot.thread.service.ThreadService;
 import com.tr.springboot.thread.service.impl.ThreadServiceImpl;

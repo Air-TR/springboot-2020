@@ -1,4 +1,4 @@
-package com.tr.springboot.thread;
+package com.tr.springboot.thread.threadpool;
 
 import java.time.Instant;
 import java.util.concurrent.ArrayBlockingQueue;

@@ -1,4 +1,4 @@
-package com.tr.springboot.thread;
+package com.tr.springboot.thread.threadpool;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

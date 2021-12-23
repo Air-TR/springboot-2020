@@ -12,7 +12,7 @@ import java.time.LocalTime;
  * @version 1.0
  * @date 8/25/2020 10:58 AM
  */
-public class TestThread {
+public class ThreadTest {
 
     private static ThreadService threadService = new ThreadServiceImpl();
 

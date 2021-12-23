@@ -9,8 +9,8 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * CyclicBarrier 测试
- * CyclicBarrier 要比 CountDownLatch 多1
- * 比如: 开三个线程,CountDownLatch配3,CyclicBarrier要配4
+ * CyclicBarrier 要比 CountDownLatch 多 1
+ * 比如: 开三个线程, CountDownLatch 配 3, CyclicBarrier 要配 4
  *
  * @author TR
  * @version 1.0

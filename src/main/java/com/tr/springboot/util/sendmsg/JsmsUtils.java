@@ -1,4 +1,4 @@
-package com.tr.springboot.util;
+package com.tr.springboot.util.sendmsg;
 
 import cn.jiguang.common.resp.APIConnectionException;
 import cn.jiguang.common.resp.APIRequestException;
