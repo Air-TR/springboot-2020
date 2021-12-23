@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * 排序：以下 map 先按 height 排序，再按 age 排序
+ *
  * @author rtao
  * @date 2021/3/3 17:38
  */
@@ -27,11 +29,11 @@ public class ListMapSort2 {
         HashMap<String, Object> map2 = new HashMap<>();
         map2.put("name","wangliu");
         map2.put("age",23);
-        map2.put("height",165);
+        map2.put("height",195);
 
         HashMap<String, Object> map3 = new HashMap<>();
         map3.put("name","laoliu1");
-        map3.put("age",24);
+        map3.put("age",26);
         map3.put("height",180);
 
         HashMap<String, Object> map4 = new HashMap<>();
@@ -65,9 +67,10 @@ public class ListMapSort2 {
         }
     }
 
+    // .reversed() 降序排序，去掉 .reversed() 升序排序
     private List<Map<String, Object>> sortList(List<Map<String, Object>> list){
         return list.stream().sorted(Comparator.comparing(ListMapSort2::comparingByAge).reversed()
-                .thenComparing(Comparator.comparing(ListMapSort2::comparingByName).reversed()))
+                .thenComparing(Comparator.comparing(ListMapSort2::comparingByHeight).reversed()))
                 .collect(Collectors.toList());
     }
 
@@ -75,7 +78,7 @@ public class ListMapSort2 {
         return (Integer) map.get("age");
     }
 
-    private static Integer comparingByName(Map<String, Object> map){
+    private static Integer comparingByHeight(Map<String, Object> map){
         return (Integer) map.get("height");
     }
 

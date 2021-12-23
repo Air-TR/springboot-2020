@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 排序：以下 map 先按 height 排序，再按 age 排序
+ *
  * @author rtao
  * @date 2021/3/3 15:56
  */
@@ -29,7 +31,7 @@ public class ListMapSort {
 
         HashMap<String, Object> map3 = new HashMap<>();
         map3.put("name","laoliu1");
-        map3.put("age",24);
+        map3.put("age",26);
         map3.put("height",180);
 
         HashMap<String, Object> map4 = new HashMap<>();
@@ -48,7 +50,7 @@ public class ListMapSort {
         list.add(map4);
         list.add(map5);
 
-        //排序前
+        // 排序前
         System.out.println("排序前:");
         for (Map<String, Object> map : list) {
             System.out.println(map.toString());
@@ -59,21 +61,27 @@ public class ListMapSort {
             public int compare(Map<String, Object> o1, Map<String, Object> o2) {
                 Integer height1 = (Integer) o1.get("height");
                 Integer height2 = (Integer) o2.get("height");
-                return height1.compareTo(height2);//升序
+                return height1.compareTo(height2); //升序
             }
         });
+
+        // 排序后
+        System.out.println("排序后-1:");
+        for (Map<String, Object> map : list) {
+            System.out.println(map.toString());
+        }
 
         Collections.sort(list, new Comparator<Map<String, Object>>() {
             @Override
             public int compare(Map<String, Object> o1, Map<String, Object> o2) {
                 Integer age1 = (Integer) o1.get("age");
                 Integer age2 = (Integer) o2.get("age");
-                return age1.compareTo(age2);//升序
+                return age1.compareTo(age2); //升序
             }
         });
 
-        //排序后
-        System.out.println("排序后:");
+        // 排序后
+        System.out.println("排序后-2:");
         for (Map<String, Object> map : list) {
             System.out.println(map.toString());
         }

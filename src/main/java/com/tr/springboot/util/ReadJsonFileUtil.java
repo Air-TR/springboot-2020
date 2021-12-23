@@ -8,13 +8,15 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 /**
+ * 读取 json 文件
+ *
  * @author rtao
  * @date 2021/5/12 16:35
  */
 public class ReadJsonFileUtil {
 
     /**
-     * 读取json文件，返回json串
+     * 读取 json 文件，返回 json 串
      */
     public static String readJsonFile(String filePath) {
         String jsonStr = "";
