@@ -24,8 +24,9 @@ public class SocialUniformCreditCodeUtil {
     private final static int[] wi = {1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28};
 
     public static void main(String[] args) {
-        boolean pass = validateUnifiedCreditCode("915001130736623040");
-        System.out.println(pass);
+        String code = generateOneUnifiedCreditCode(); // 随机生成一个社会统一信用代码
+        boolean pass = validateUnifiedCreditCode("915001130736623040"); // 校验社会统一信用代码
+        System.out.println(code + " 是否校验通过：" + pass);
     }
 
     /**
