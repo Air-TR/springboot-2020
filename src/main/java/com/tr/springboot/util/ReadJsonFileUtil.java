@@ -24,7 +24,6 @@ public class ReadJsonFileUtil {
             File jsonFile = new File(filePath);
             if (jsonFile.isFile() && jsonFile.exists()) {
                 FileReader fileReader = new FileReader(jsonFile);
-
                 Reader reader = new InputStreamReader(new FileInputStream(jsonFile),"UTF-8");
                 int ch = 0;
                 StringBuffer sb = new StringBuffer();
