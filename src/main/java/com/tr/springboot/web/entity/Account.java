@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
+import java.io.Serializable;
 
 @Entity
-public class Account {
+public class Account implements Serializable {
 
     /** id */
     @Id
@@ -15,10 +15,16 @@ public class Account {
     private Integer id;
 
     /** 用户名 */
-    private String username;
+    private String name;
+
+    /** 性别 */
+    private Integer gender;
+
+    /** 年龄 */
+    private Integer age;
 
     /** 余额 */
-    private BigDecimal balance;
+    private Double balance;
 
     public Integer getId() {
         return id;
@@ -28,19 +34,35 @@ public class Account {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public BigDecimal getBalance() {
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 }

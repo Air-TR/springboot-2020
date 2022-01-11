@@ -28,13 +28,14 @@ spring:
 #    nodes: 127.0.0.1:6381,127.0.0.1:6382,127.0.0.1:6383,127.0.0.1:6384,127.0.0.1:6385,127.0.0.1:6386
 #    max-redirects: 2 # 最大重定向次数
   #rabbitmq
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
-
+local:
+  develop: true

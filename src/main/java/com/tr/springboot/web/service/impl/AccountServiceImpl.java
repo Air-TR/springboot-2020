@@ -1,6 +1,6 @@
 package com.tr.springboot.web.service.impl;
 
-import com.tr.springboot.web.dao.jpa.AccountRepository;
+import com.tr.springboot.web.dao.jpa.AccountJpa;
 import com.tr.springboot.web.entity.Account;
 import com.tr.springboot.web.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,33 +13,33 @@ import java.math.BigDecimal;
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private AccountJpa accountJpa;
 
     @Override
     public void transfer() {
         // before 事务（测试结果：下面的事务方法失败后不影响前面已经执行的结果）
-        Account accountB = accountRepository.getOne(2);
-        accountB.setUsername(accountB.getUsername() + "-1");
-        accountRepository.save(accountB);
+        Account accountB = accountJpa.getOne(2);
+        accountB.setName(accountB.getName() + "-1");
+        accountJpa.save(accountB);
 
         // 事务方法
-        transferAccounts(1,2, new BigDecimal(200));
+        transferAccounts(1,2, 200d);
 
         // after 事务（测试结果：上面的事务方法失败后下面的代码不执行）
-//        accountB.setUsername(accountB.getUsername() + "-2");
-//        accountRepository.save(accountB);
+//        accountB.setName(accountB.getName() + "-2");
+//        accountJpa.save(accountB);
     }
 
     @Override
     public void resetData() {
-        Account accountA = accountRepository.getOne(1);
-        Account accountB = accountRepository.getOne(2);
-        BigDecimal balance = new BigDecimal(500);
+        Account accountA = accountJpa.getOne(1);
+        Account accountB = accountJpa.getOne(2);
+        double balance = 500;
         accountA.setBalance(balance);
         accountB.setBalance(balance);
-        accountB.setUsername("B");
-        accountRepository.save(accountA);
-        accountRepository.save(accountB);
+        accountB.setName("B");
+        accountJpa.save(accountA);
+        accountJpa.save(accountB);
     }
 
     /**
@@ -49,15 +49,15 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     @Transactional
-    public void transferAccounts(int fromAccountId, int toAccountId, BigDecimal account) {
-        Account fromAccount = accountRepository.getOne(fromAccountId);
-        fromAccount.setBalance(fromAccount.getBalance().subtract(account));
-        accountRepository.save(fromAccount); // fromUser扣钱
+    public void transferAccounts(int fromAccountId, int toAccountId, Double amount) {
+        Account fromAccount = accountJpa.getOne(fromAccountId);
+        fromAccount.setBalance(fromAccount.getBalance() - amount);
+        accountJpa.save(fromAccount); // fromUser扣钱
 
-        Account toAccount = accountRepository.getOne(toAccountId);
-        toAccount.setBalance(toAccount.getBalance().add(account));
+        Account toAccount = accountJpa.getOne(toAccountId);
+        toAccount.setBalance(toAccount.getBalance() + amount);
         int e = 1 / 0; // 制造异常
-        accountRepository.save(toAccount); // toUser加钱
+        accountJpa.save(toAccount); // toUser加钱
     }
 
 }

@@ -1,10 +1,12 @@
 package com.tr.springboot.redis.service.impl;
 
 import com.tr.springboot.redis.service.RedisService;
-import com.tr.springboot.web.dao.jpa.AccountRepository;
+import com.tr.springboot.web.dao.jpa.AccountJpa;
+import com.tr.springboot.web.entity.Account;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author TR
@@ -15,11 +17,16 @@ import javax.annotation.Resource;
 public class RedisServiceImpl implements RedisService {
 
     @Resource
-    private AccountRepository accountRepository;
+    private AccountJpa accountJpa;
 
     @Override
-    public String getAccountName(int id) {
-        return accountRepository.getOne(id).getUsername();
+    public List<Account> getAccountsByBalance(Double balance) {
+        return accountJpa.findByBalance(balance);
+    }
+
+    @Override
+    public List<String> getAccountNamesByBalance(Double balance) {
+        return accountJpa.findNameByBalance(balance);
     }
 
 }

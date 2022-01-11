@@ -107,23 +107,23 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-        <dependency>
-            <groupId>quartz</groupId>
-            <artifactId>quartz</artifactId>
-            <version>1.5.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>quartz</groupId>-->
+<!--            <artifactId>quartz</artifactId>-->
+<!--            <version>1.5.2</version>-->
+<!--        </dependency>-->
 
         <!-- 极光短信 -->
-        <dependency>
-            <groupId>cn.jpush.api</groupId>
-            <artifactId>jsms-client</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.jpush.api</groupId>
-            <artifactId>jiguang-common</artifactId>
-            <version>1.0.8</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.jpush.api</groupId>-->
+<!--            <artifactId>jsms-client</artifactId>-->
+<!--            <version>1.2.5</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>cn.jpush.api</groupId>-->
+<!--            <artifactId>jiguang-common</artifactId>-->
+<!--            <version>1.0.8</version>-->
+<!--        </dependency>-->
         <!-- 极光短信 end -->
 
         <dependency>

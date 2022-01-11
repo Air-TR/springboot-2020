@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Redis控制类
+ * RedisTemplate 功能测试
  *
  * @author taorun
  * @version 1.0
@@ -22,33 +22,46 @@ public class RedisTemplateController {
     @Resource
     private RedisTemplate redisTemplate;
 
-    @GetMapping("/redisTemplate/set-five-data")
-    public void setFiveData() {
-        redisTemplate.opsForValue().set("f", "File");
-        redisTemplate.opsForValue().set("e", "Edit");
-        redisTemplate.opsForValue().set("v", "View");
-        redisTemplate.opsForValue().set("n", "Navigate");
-        redisTemplate.opsForValue().set("c", "Code");
-    }
-
+    /**
+     * 设置 Redis 缓存数据
+     *
+     * @author TR
+     * @date 2022/1/10 下午5:28
+     * @params [key, value]
+     */
     @GetMapping("/redisTemplate/set")
     public void set(@RequestParam String key, @RequestParam String value) {
         redisTemplate.opsForValue().set(key, value);
         redisTemplate.expire(key, 100, TimeUnit.SECONDS);
     }
 
-    @GetMapping("/redisTemplate/{id}")
-    public Object get(@PathVariable String id) {
-        return redisTemplate.opsForValue().get(id);
-    }
-
-    @DeleteMapping("/redisTemplate/{id}")
-    public void delete(@PathVariable String id) {
-        redisTemplate.delete(id);
+    /**
+     * 根据 key 获取缓存数据
+     *
+     * @author TR
+     * @date 2022/1/10 下午5:28
+     * @params [id]
+     */
+    @GetMapping("/redisTemplate/{key}")
+    public Object get(@PathVariable String key) {
+        return redisTemplate.opsForValue().get(key);
     }
 
     /**
-     * 清除所有Redis缓存数据
+     * 根据 key 删除缓存数据
+     *
+     * @author TR
+     * @date 2022/1/10 下午5:29
+     * @params [id]
+     */
+    @DeleteMapping("/redisTemplate/{key}")
+    public void delete(@PathVariable String key) {
+        redisTemplate.delete(key);
+    }
+
+    /**
+     * 清除所有 Redis 缓存数据
+     *
      * @author taorun
      * 2020-08-09 22:41
      * @params []

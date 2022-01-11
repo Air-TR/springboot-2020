@@ -15,6 +15,7 @@ public class AutoRunAfterSpringBootStart implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // todo (从数据库获取任务数据，并实现定时触发执行)
+        System.out.println("项目启动自动执行 --> AutoRunAfterSpringBootStart.run()");
     }
 
 }

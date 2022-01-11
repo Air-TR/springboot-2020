@@ -1,6 +1,6 @@
 package com.tr.springboot.web.controller;
 
-import com.tr.springboot.web.dao.jpa.AccountRepository;
+import com.tr.springboot.web.dao.jpa.AccountJpa;
 import com.tr.springboot.web.entity.Account;
 import com.tr.springboot.web.service.AccountService;
 import io.swagger.annotations.Api;
@@ -26,7 +26,7 @@ public class AccountController {
     private AccountService accountService;
 
     @Resource
-    private AccountRepository accountRepository;
+    private AccountJpa accountJpa;
 
     /**
      * 与下面 /transfer2 对比测试
@@ -56,12 +56,12 @@ public class AccountController {
     @GetMapping("/transfer2")
     public void transferRunInController() {
         // before 事务（测试结果：下面的事务方法失败后不影响前面已经执行的结果）
-        Account accountB = accountRepository.getOne(2);
-        accountB.setUsername(accountB.getUsername() + "-1");
-        accountRepository.save(accountB);
+        Account accountB = accountJpa.getOne(2);
+        accountB.setName(accountB.getName() + "-1");
+        accountJpa.save(accountB);
 
         // 事务方法
-        accountService.transferAccounts(1,2, new BigDecimal(200));
+        accountService.transferAccounts(1,2, 200d);
     }
 
     @GetMapping("/reset-data")
