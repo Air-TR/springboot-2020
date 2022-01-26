@@ -53,12 +53,13 @@
             <version>2.7.0</version>  <!-- 版本号不能随意删除修改 -->
         </dependency>
         <!-- end swagger -->
-        <!-- 热部署 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
+        <!-- 热部署（加了反而导致问题：重新编译加载文件控制台像重新启动项目一样，且完成后接口访问不到；去掉不用反而正常重新编译加载且运行符合预期） -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>

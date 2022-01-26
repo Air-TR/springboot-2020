@@ -21,4 +21,16 @@ public class AsyncService {
         }
     }
 
+    @Async // 使用 @Async 需要在启动类配置 @EnableAsync
+    public String async2() {
+        try {
+            System.out.println(Thread.currentThread().getName() + ": async start 2");
+            Thread.sleep(3000);
+            System.out.println(Thread.currentThread().getName() + ": async end 2");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "ASYNC OVER";
+    }
+
 }

@@ -24,4 +24,12 @@ public class AsyncController {
         System.out.println("end");
     }
 
+    /**
+     * 不会有返回内容
+     */
+    @GetMapping("/async2")
+    public String async2() {
+        return asyncService.async2();
+    }
+
 }
