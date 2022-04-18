@@ -1,8 +1,10 @@
 package com.tr.springboot.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Lambda 测试，代码来源：https://www.cnblogs.com/haixiang/p/11029639.html#1462250077
@@ -18,6 +20,10 @@ import java.util.List;
 public class Lambda {
 
     public static void main(String[] args) {
+        /** 集合去重 */
+        distinct();
+        /** 集合过滤 */
+        filter();
         /** 删除集合中的某个元素 */
         deleteElementInList();
         /** 遍历集合 */
@@ -26,6 +32,24 @@ public class Lambda {
         sortList();
         /** 创建线程 */
         createThread();
+    }
+
+    /**
+     * lambda 去重
+     */
+    private static void distinct() {
+        List<Integer> list = Arrays.asList(8, 3, 8, 3, 6, 5, 9, 5, 6, 7);
+        List<Integer> distinctList = list.stream().distinct().collect(Collectors.toList());
+        System.out.println(distinctList);
+    }
+
+    /**
+     * lambda 过滤
+     */
+    private static void filter() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 3);
+        List<Integer> filterList = list.stream().filter(a -> a == 3).collect(Collectors.toList());
+        System.out.println(filterList);
     }
 
     /**
