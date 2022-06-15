@@ -12,14 +12,17 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @date 8/19/2020 9:53 AM
  */
-@Aspect // @Aspect 表明是一个切面类
+@Aspect
 @Component
 public class LogAspect {
+
     /**
-     * @Pointcut 切入点，其中execution用于使用切面的连接点。
-     * 使用方法：execution(方法修饰符(可选) 返回类型 方法名 参数 异常模式(可选))，可以使用通配符匹配字符，*可以匹配任意字符。
+     * @Pointcut 标记的方法内不需要写代码，不执行，只是一个标记
+     *   真正执行逻辑是在 @Before @After @AfterReturning @AfterThrowing @Around 这些注解标记的方法中
+     *   也可以不使用 @Pointcut，直接将切入点表达式定义在 @Before @After ... 这些方法中，效果与定义 @Pointcut 一样
      */
-    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..)) || execution(public * com.tr.springboot.aop.service.*.*(..))") // 这边可以指定 controller/service 或者其他包
+    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..))" +
+            "|| execution(public * com.tr.springboot.aop.service.*.*(..))")
     public void logAspect(){}
 
     /** @Before 在方法前执行 */
@@ -52,13 +55,9 @@ public class LogAspect {
      */
     @Around("logAspect()")
     public void doAround(ProceedingJoinPoint joinPoint) throws Throwable{
-//        System.out.println("doAround");
-//        return joinPoint.proceed();
         System.out.println("doAround + 方法开始时间:" + System.currentTimeMillis());
         joinPoint.proceed();
         System.out.println("doAround + 方法结束时间:" + System.currentTimeMillis());
     }
-
-
 
 }

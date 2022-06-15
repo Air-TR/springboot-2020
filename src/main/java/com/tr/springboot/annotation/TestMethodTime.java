@@ -12,10 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestMethodTime {
 
-//    public static void main(String[] args) {
-//        test();
-//    }
-
     @MethodTime
     public void test() {
         System.out.println("TestMethodTime YES!");

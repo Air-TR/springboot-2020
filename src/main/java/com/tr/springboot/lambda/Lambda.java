@@ -1,9 +1,6 @@
 package com.tr.springboot.lambda;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -110,6 +107,7 @@ public class Lambda {
         });
         */
         list.sort((o1, o2) -> o1.getPrice().compareTo(o2.getPrice()));
+//        list.sort(Comparator.comparing(Item::getPrice)); // 与上行代码效果相同
         list.forEach(System.out::println);
     }
 
