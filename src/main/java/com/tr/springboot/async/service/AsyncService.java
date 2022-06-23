@@ -11,26 +11,22 @@ import org.springframework.stereotype.Service;
 public class AsyncService {
 
     @Async // 使用 @Async 需要在启动类配置 @EnableAsync
-    public void async() {
+    public void voidAsync() {
         try {
-            System.out.println(Thread.currentThread().getName() + ": async start");
             Thread.sleep(3000);
-            System.out.println(Thread.currentThread().getName() + ": async end");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     @Async // 使用 @Async 需要在启动类配置 @EnableAsync
-    public String async2() {
+    public String returnAsync() {
         try {
-            System.out.println(Thread.currentThread().getName() + ": async start 2");
             Thread.sleep(3000);
-            System.out.println(Thread.currentThread().getName() + ": async end 2");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "ASYNC OVER";
+        return "ASYNC SUCCESS";
     }
 
 }

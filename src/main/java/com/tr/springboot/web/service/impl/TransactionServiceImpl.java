@@ -62,7 +62,8 @@ public class TransactionServiceImpl implements TransactionService {
         t3.setValue3(3);
         /**
          * 下面行代码：制造异常触发事务，t1、t2、t3 修改都不生效。
-         * 去掉方法上的事务注解，t1修改的数据生效，从出错的t2开始都不生效。
+         * 去掉方法上的事务注解，t1修改的数据生效，从出错的t2开始都不生效（因为等同于普通方法执行，
+         *  t1已经执行所以生效，还没到t2就报错，所以t2根本就没有执行，谈不上生效不生效）。
          */
         int e = 1 / 0;
         transactionMapper.updateById(t3);

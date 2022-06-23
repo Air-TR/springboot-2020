@@ -18,18 +18,22 @@ public class AsyncController {
     AsyncService asyncService;
 
     @GetMapping("/async")
-    public void async() {
-        System.out.println("start");
-        asyncService.async();
-        System.out.println("end");
+    public String async() throws InterruptedException {
+        long start = System.currentTimeMillis();
+        Thread.sleep(500);
+        asyncService.voidAsync(); // 异步执行
+        String res = asyncService.returnAsync(); // 异步执行
+        System.out.println(res); // 输出结果为 null
+        long end = System.currentTimeMillis();
+        return "执行：" + (end - start) + "ms";
     }
 
     /**
-     * 不会有返回内容
+     * 该方法执行不会有返回内容，事实上返回的是 null
      */
     @GetMapping("/async2")
     public String async2() {
-        return asyncService.async2();
+        return asyncService.returnAsync();
     }
 
 }
