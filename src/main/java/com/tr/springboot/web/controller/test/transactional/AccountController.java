@@ -1,4 +1,4 @@
-package com.tr.springboot.web.controller;
+package com.tr.springboot.web.controller.test.transactional;
 
 import com.tr.springboot.web.dao.jpa.AccountJpa;
 import com.tr.springboot.web.entity.Account;

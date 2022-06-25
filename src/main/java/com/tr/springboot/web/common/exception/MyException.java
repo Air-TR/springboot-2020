@@ -10,8 +10,6 @@ import com.tr.springboot.web.common.result.ResultEnum;
  */
 public class MyException extends RuntimeException {
 
-    private static final long serialVersionUID = 2463545557484894315L;
-
     private Integer code;
 
     public MyException(ResultEnum resultEnum) {

@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.2.RELEASE</version>
+        <version>2.4.2</version> <!-- 2.3.2.RELEASE to 2.4.2 —— 20220625（因为引入 loadbalancer 依赖与 2.3.2.RELEASE 版本不兼容，启动报错，要求升级 2.4.x / 2.5.x） -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tr</groupId>
@@ -22,6 +22,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 引入 loadbalancer 使用 RestTemplate，
+            需要注意 loadbalancer 版本与 SpringBoot 版本是否匹配，不匹配可能导致项目启动失败 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>3.0.3</version> <!-- 版本不能随意修改，若与 SpringBoot 版本不匹配，可能导致启动报错 -->
         </dependency>
 
         <dependency>

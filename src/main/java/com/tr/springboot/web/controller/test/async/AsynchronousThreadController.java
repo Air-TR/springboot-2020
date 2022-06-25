@@ -1,7 +1,8 @@
-package com.tr.springboot.web.controller;
+package com.tr.springboot.web.controller.test.async;
 
 import com.tr.springboot.web.dao.jpa.AccountJpa;
 import com.tr.springboot.web.service.SleepService;
+import com.tr.springboot.web.service.impl.SleepServiceImpl;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
+ * 异步线程控制类
+ *
  * @author TR
  * @version 1.0
  * @date 2020/9/9 下午10:28
@@ -22,7 +25,7 @@ public class AsynchronousThreadController {
     private AccountJpa accountJpa;
 
     @Resource
-    private SleepService sleepService;
+    private SleepServiceImpl sleepService;
 
     @GetMapping("/asynchronous-thread/test")
     public String test() throws InterruptedException {

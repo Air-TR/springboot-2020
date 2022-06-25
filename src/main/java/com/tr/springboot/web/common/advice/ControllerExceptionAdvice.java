@@ -1,26 +1,25 @@
-package com.tr.springboot.web.common.exception;
+package com.tr.springboot.web.common.advice;
 
+import com.tr.springboot.web.common.exception.MyException;
 import com.tr.springboot.web.common.result.Result;
 import com.tr.springboot.web.common.result.ResultEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * 统一异常处理类
+ * Controller 统一异常处理
  *
- * @author taorun
- * 2017/8/7 下午4:17
+ * @author TR
+ * @date 2022/6/25 上午8:56
  */
-@ControllerAdvice
-public class ExceptionHandle {
+@RestControllerAdvice
+public class ControllerExceptionAdvice {
 
-    private final static Logger logger = LoggerFactory.getLogger(ExceptionHandle.class);
+    private final static Logger logger = LoggerFactory.getLogger(ControllerExceptionAdvice.class);
 
     @ExceptionHandler(Exception.class)
-    @ResponseBody
     public Result handle(Exception e) {
         if (e instanceof MyException) {
             MyException myException = (MyException) e;
