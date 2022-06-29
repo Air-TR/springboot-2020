@@ -5,7 +5,7 @@ server:
 
 jasypt:
   encryptor:
-    password: SecretKey # jasypt 密钥（盐值）
+    password: SecretKey # jasypt 密钥；为防止密钥泄露，可以在项目部署时用命令传入秘钥值：java -jar -Djasypt.encryptor.password=SecretKey xxx.jar（还可以在服务器环境变量里配置，进一步提高安全性）
     algorithm: PBEWithMD5AndDES # 默认加密方式 PBEWithMD5AndDES，可以更改为 PBEWithMD5AndTripleDES
     iv-generator-classname: org.jasypt.iv.NoIvGenerator # jasypt 在 3.0.0 以后更改了加密算法，需要增加此配置，否则启动会报错（使用低于 3.0.0 版本可不配置此项）
 
