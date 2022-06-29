@@ -5,6 +5,7 @@ import com.tr.springboot.web.entity.Account;
 import com.tr.springboot.web.service.AccountService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +28,11 @@ public class AccountController {
 
     @Resource
     private AccountJpa accountJpa;
+
+    @GetMapping("/{id}")
+    public Account getById(@PathVariable Integer id) {
+        return accountJpa.findById(id).get(); // JPA 不要用 getOne()，会报错，即使查询的 id 存在也报错
+    }
 
     /**
      * 与下面 /transfer2 对比测试

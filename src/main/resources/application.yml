@@ -1,14 +1,20 @@
 server:
   port: 8081
   servlet:
-    context-path: /api/2020
+    context-path: /2020
+
+jasypt:
+  encryptor:
+    password: SecretKey # jasypt 密钥（盐值）
+    algorithm: PBEWithMD5AndDES # 默认加密方式 PBEWithMD5AndDES，可以更改为 PBEWithMD5AndTripleDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator # jasypt 在 3.0.0 以后更改了加密算法，需要增加此配置，否则启动会报错（使用低于 3.0.0 版本可不配置此项）
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springboot-2020?useUnicode=true&characterEncoding=utf-8&useSSL=true
-    username: root
-    password: root
+    username: ENC(6YrBrC3DIPDhLs6pDblobg==) # 使用 jasypt 加密
+    password: ENC(ZtkRoI6NnmHAhN8USO1DDA==) # 使用 jasypt 加密
 #  devtools:
 #    restart:
 #      enabled: true # 配置项目热部署（SpringBoot不配置也生效，只需要pom文件中的热部署配置）
