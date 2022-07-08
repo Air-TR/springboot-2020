@@ -1,4 +1,4 @@
-package com.tr.springboot.shiro;
+package com.tr.springboot;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -23,11 +23,11 @@ public class ShiroTest {
 
     @Test
     public void loginTest() {
-        // 创建IniSecurityManager工程对象:加载配置文件
+        // 创建 IniSecurityManager 工程对象：加载配置文件
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
-        // 通过工厂对象创建SecurityManager对象
+        // 通过工厂对象创建 SecurityManager 对象
         SecurityManager securityManager = factory.getInstance();
-        // 将SecurityManager绑定到当前运行环境中，让系统随时可以访问SecurityManager对象
+        // 将 SecurityManager 绑定到当前运行环境中，让系统随时可以访问 SecurityManager 对象
         SecurityUtils.setSecurityManager(securityManager);
 
         // 创建登录主体 注意：此时主体没有经过验证，仅仅是个空的对象

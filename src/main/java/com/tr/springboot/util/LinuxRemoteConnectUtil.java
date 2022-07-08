@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Linux服务器远程连接工具类
+ * Linux 服务器远程连接工具类
  *
  * @author: rtao
  * @date: 2020/11/20 9:13
