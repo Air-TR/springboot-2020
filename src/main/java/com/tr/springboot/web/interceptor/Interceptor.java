@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 拦截器
+ * 拦截器（已废弃，此类功能交由 shiro 完成 ———— 2022.07.08）
  *
  * @author: rtao
  * @date: 2021/4/21 20:35
@@ -25,7 +25,7 @@ public class Interceptor implements AsyncHandlerInterceptor {
     private static final String SESSION_ATTR_USER = "user";
 
     /**
-     * 返回true继续向下执行，返回false取消当前请求
+     * 返回 true 继续向下执行，返回 false 取消当前请求
      *
      * @author: rtao
      * @date: 2021/4/21 20:35
@@ -40,7 +40,7 @@ public class Interceptor implements AsyncHandlerInterceptor {
                 }
             }
         }
-        return true; // 只有返回true才会继续向下执行，返回false取消当前请求
+        return true; // 只有返回 true 才会继续向下执行，返回 false 取消当前请求
     }
 
 }
