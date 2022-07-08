@@ -36,4 +36,5 @@ public class MyPermissionsAuthorizationFilter extends PermissionsAuthorizationFi
         }
         return true;
     }
+
 }
