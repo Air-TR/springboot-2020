@@ -23,7 +23,6 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .tags(new Tag("Hello", "Hello"), getTags())
                 .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.tr.springboot.web.controller"))
                 .apis(RequestHandlerSelectors.basePackage("com.tr.springboot"))
                 .paths(PathSelectors.any())
                 .build();
@@ -36,6 +35,8 @@ public class Swagger2 {
                 new Tag("Redis", "Redis"),
                 new Tag("RedisUtil", "Redis工具"),
                 new Tag("AsynchronousThread", "异步线程"),
+                new Tag("Advice", "自动封装 Result 类型返回"),
+                new Tag("Car", "汽车")
         };
         return tags;
     }

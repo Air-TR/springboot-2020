@@ -3,6 +3,8 @@ package com.tr.springboot.jasypt;
 import org.jasypt.util.text.BasicTextEncryptor;
 
 /**
+ * 对配置信息加密
+ *
  * @author TR
  * @date 2022/6/29 下午2:37
  */

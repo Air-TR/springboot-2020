@@ -18,7 +18,7 @@ import java.util.Set;
 public class MyPermissionsAuthorizationFilter extends PermissionsAuthorizationFilter {
 
     /**
-     * 自定义 perms[permission:admin:*, permission:test:*] 中 perms 拦截验证逻辑
+     * 自定义 perms[admin:*, test:*] 中 perms 拦截验证逻辑
      *  这里重写后的验证逻辑是：只要具备 perms 中任意一种 perm 即可访问（原来需要具备所有 perm 才能访问）
      */
     @Override

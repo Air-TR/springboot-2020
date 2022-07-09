@@ -1,8 +1,8 @@
 package com.tr.springboot.shiro.realm;
 
 import com.tr.springboot.shiro.properties.ShiroProperties;
-import com.tr.springboot.web.dao.jpa.UserJpa;
-import com.tr.springboot.web.entity.User;
+import com.tr.springboot.web.dao.jpa.*;
+import com.tr.springboot.web.entity.shiro.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -12,7 +12,8 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * @author TR
@@ -25,6 +26,18 @@ public class LoginAuthorizingRealm extends AuthorizingRealm {
 
     @Resource
     UserJpa userJpa;
+
+    @Resource
+    UserRoleJpa userRoleJpa;
+
+    @Resource
+    RoleJpa roleJpa;
+
+    @Resource
+    RolePermJpa rolePermJpa;
+
+    @Resource
+    PermJpa permJpa;
 
     /**
      * 实现用户的登录行为
@@ -60,35 +73,61 @@ public class LoginAuthorizingRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         // 根据 username 获取用户的 role 和 permission 进行赋值
         String username = (String) getAvailablePrincipal(principalCollection);
-        // 角色
-        Set<String> roles = new HashSet<>();
-        if ("admin".equals(username)) {
-            roles.add("Admin");
-            roles.add("System");
-            roles.add("Visitor");
-        }
-        if ("system".equals(username)) {
-            roles.add("System");
-            roles.add("Visitor");
-        }
-        if ("visitor".equals(username)) {
-            roles.add("Visitor");
-        }
-        // 权限
-        Set<String> permissions = new HashSet<>();
-        if (roles.contains("Admin")) {
-            permissions.add("permission:admin:*");
-        }
-        if (roles.contains("System")) {
-            permissions.add("permission:system:*");
-        }
-        if (roles.contains("Visitor")) {
-            permissions.add("permission:visitor:*");
-        }
+        User user = userJpa.findByUsername(username);
+
+        /** 角色（获取 roles 完整流程）*/
+//        List<UserRole> userRoleList = userRoleJpa.findAllByUserId(user.getUserId());
+//        List<Integer> roleIds = userRoleList.stream().map(userRole -> userRole.getRoleId()).collect(Collectors.toList());
+//        List<Role> roleList = roleJpa.findAllById(roleIds);
+//        Set<String> roles = roleList.stream().map(role -> role.getRole()).collect(Collectors.toSet());
+        /** 权限（获取 perms 完整流程）*/
+//        List<RolePerm> rolePermList = rolePermJpa.findAllByRoleIdIn(roleIds);
+//        List<Integer> permIds = rolePermList.stream().map(rolePerm -> rolePerm.getPermId()).collect(Collectors.toList());
+//        List<Perm> permList = permJpa.findAllById(permIds);
+//        Set<String> perms = permList.stream().map(perm -> perm.getPerm()).collect(Collectors.toSet());
+
+        /** 角色（获取 roles 精简流程）*/
+//        List<Role> roleList = roleJpa.findAllByUserId(user.getUserId());
+//        Set<String> roles = roleList.stream().map(role -> role.getRole()).collect(Collectors.toSet());
+        /** 权限（获取 perms 精简流程）*/
+//        List<Perm> permList = permJpa.findAllByUserId(user.getUserId());
+//        Set<String> perms = permList.stream().map(perm -> perm.getPerm()).collect(Collectors.toSet());
+
+        /** 角色（获取 roles 最简流程）*/
+        Set<String> roles = roleJpa.selectRolesByUserId(user.getUserId());
+        /** 权限（获取 perms 最简流程）*/
+        Set<String> perms = permJpa.selectPermsByUserId(user.getUserId());
+
+        // 角色（手动模拟赋值）
+//        Set<String> roles = new HashSet<>();
+//        if ("admin".equals(username)) {
+//            roles.add("Admin");
+//            roles.add("System");
+//            roles.add("Visitor");
+//        }
+//        if ("system".equals(username)) {
+//            roles.add("System");
+//            roles.add("Visitor");
+//        }
+//        if ("visitor".equals(username)) {
+//            roles.add("Visitor");
+//        }
+        // 权限（手动模拟赋值）
+//        Set<String> perms = new HashSet<>();
+//        if (roles.contains("Admin")) {
+//            perms.add("admin:*");
+//        }
+//        if (roles.contains("System")) {
+//            perms.add("system:*");
+//        }
+//        if (roles.contains("Visitor")) {
+//            perms.add("visitor:*");
+//        }
+
         // 为当前用户添加角色和权限
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.setRoles(roles);
-        info.setStringPermissions(permissions);
+        info.setStringPermissions(perms);
         return info;
     }
 

@@ -2,19 +2,27 @@ package com.tr.springboot.web.controller.advice;
 
 import com.tr.springboot.web.common.annotation.NotControllerResponseAdvice;
 import com.tr.springboot.web.common.result.Result;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 
 /**
- * 该类中的接口，会被 ControllerResponseAdvice 扫描，自动将返回结果包装成 Result 类型返回
+ * 该类中的接口，会被 ControllerResponseAdvice 扫描，自动将返回结果封装成 Result 类型返回
  *
  * @author TR
  * @date 2022/6/25 上午9:42
  */
+@Api(tags = "Advice")
 @RestController
 public class AdviceController {
+
+    /**
+     * 即使返回类型是 void，也会被封装成 Result 类型返回：{ "code": 0, "msg": "成功", "data": null }
+     */
+    @GetMapping("/advice/void")
+    public void voidApi() {}
 
     /**
      * 该接口返回结果会被自动包装成 Result 类型返回

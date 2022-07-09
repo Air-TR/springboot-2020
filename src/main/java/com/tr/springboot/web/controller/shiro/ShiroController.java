@@ -2,7 +2,7 @@ package com.tr.springboot.web.controller.shiro;
 
 import com.tr.springboot.shiro.properties.ShiroProperties;
 import com.tr.springboot.web.dao.jpa.UserJpa;
-import com.tr.springboot.web.entity.User;
+import com.tr.springboot.web.entity.shiro.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -46,11 +46,13 @@ public class ShiroController {
         try {
             subject.login(new UsernamePasswordToken(username, password));
         } catch (UnknownAccountException e) {
-            return "UnknownAccountException: " + e.getMessage();
+            return "用户不存在";
+//            return "UnknownAccountException: " + e.getMessage();
         } catch (AccountException e) {
             return "AccountException: " + e.getMessage();
         } catch (IncorrectCredentialsException e) {
-            return "IncorrectCredentialsException: " + e.getMessage();
+            return "密码错误";
+//            return "IncorrectCredentialsException: " + e.getMessage();
         }
         return "登陆成功，准备跳转主页";
     }

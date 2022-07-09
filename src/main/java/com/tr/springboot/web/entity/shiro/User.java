@@ -1,4 +1,4 @@
-package com.tr.springboot.web.entity;
+package com.tr.springboot.web.entity.shiro;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

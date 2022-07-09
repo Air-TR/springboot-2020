@@ -48,12 +48,17 @@ public class ShiroConfig {
             // anon 配置在最前
             filterChainDefinitionMap.put("/login/*/*", "anon");
             filterChainDefinitionMap.put("/register/*/*", "anon");
+            // Swagger2 免拦截
+            filterChainDefinitionMap.put("/swagger-ui.html**", "anon");
+            filterChainDefinitionMap.put("/v2/api-docs", "anon");
+            filterChainDefinitionMap.put("/swagger-resources/**", "anon");
+            filterChainDefinitionMap.put("/webjars/**", "anon");
             // 配置的 roles 默认需要全部具备才能访问，重写 RolesAuthorizationFilter 的 isAccessAllowed() 方法可自定义 roles 拦截验证逻辑
             filterChainDefinitionMap.put("/role/system/**", "roles[Admin, System]");
             // 配置的 perms 默认需要全部具备才能访问，重写 PermissionsAuthorizationFilter 的 isAccessAllowed() 方法可自定义 perms 拦截验证逻辑
-            filterChainDefinitionMap.put("/perm/admin/**", "perms[permission:admin:*, permission:test:*]");
-            filterChainDefinitionMap.put("/perm/system/**", "perms[permission:system:*]");
-            filterChainDefinitionMap.put("/perm/visitor/**", "perms[permission:visitor:*]");
+            filterChainDefinitionMap.put("/perm/admin/**", "perms[admin:*, test:*]");
+            filterChainDefinitionMap.put("/perm/system/**", "perms[system:*]");
+            filterChainDefinitionMap.put("/perm/visitor/**", "perms[visitor:*]");
             // authc 配置在最后
             filterChainDefinitionMap.put("/**", "authc");
 
