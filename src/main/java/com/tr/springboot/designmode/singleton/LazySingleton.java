@@ -13,8 +13,7 @@ public class LazySingleton {
     private static LazySingleton singleton;
 
     // 私有的构造方法
-    private LazySingleton() {
-    }
+    private LazySingleton() {}
 
     // 以自己实例为返回值的静态的公有方法，静态工厂方法
     public static LazySingleton getSingleton() {

@@ -22,19 +22,17 @@ public class CompareRunAndStartForThread {
      *   start() 方法会起新线程，run() 方法不会，等于执行普通方法
      */
     public static void main(String[] args) {
-        // 先输出 "sout"，再输出 start() 方法内容
-        // 以下4行代码执行需要 3 秒
-        new Thread(() -> threadService.methodA()).start();
-        new Thread(() -> threadService.methodB()).start();
-        new Thread(() -> threadService.methodC()).start();
-        System.out.println("sout");
+        // 以下 4 行代码总执行时间 3 秒
+        new Thread(() -> threadService.methodA()).start(); // 1 秒
+        new Thread(() -> threadService.methodB()).start(); // 2 秒
+        new Thread(() -> threadService.methodC()).start(); // 3 秒
+        System.out.println("sout1"); // 先输出 "sout1"，再输出 start() 方法内容
 
-        // 先输出 start() 方法内容，再输出 "sout"
-        // 以下4行代码执行需要 1+3+2 = 6 秒
-//        new Thread(() -> threadService.methodA()).run();
-//        new Thread(() -> threadService.methodB()).run();
-//        new Thread(() -> threadService.methodC()).run();
-//        System.out.println("sout");
+        // 以下 4 行代码总执行时间 1 + 2 + 3 = 6 秒
+        new Thread(() -> threadService.methodA()).run(); // 1 秒
+        new Thread(() -> threadService.methodB()).run(); // 2 秒
+        new Thread(() -> threadService.methodC()).run(); // 3 秒
+        System.out.println("sout2"); // 先输出 run() 方法内容，再输出 "sout2"
     }
 
 }

@@ -47,7 +47,16 @@ local:
   develop: true
 
 shiro:
-  filterEnable: true          # 是否开启拦截验证过滤
+  filterEnable: false         # 是否开启 shiro 拦截验证过滤
   hashAlgorithmName: SHA-256  # 加密算法（SHA-256、MD5...）
   hashIterations: 1           # 加密 Hash 次数
   salt: SALT                  # 加密盐值
+
+thread:
+  pool:
+    core-pool-size: 3  # 核心线程数
+    max-pool-size: 5  # 最大线程数
+    queue-capacity: 10  # 工作队列容量（若采取直接拒绝策略，最多处理 max-pool-size + queue-capacity 个线程任务，多余任务直接拒绝）
+    keep-alive-seconds: 10  # 线程池维护线程所允许的空闲时间（秒），超过这个时间会关闭多余的空闲线程，线程池保留 core-pool-size 个线程数
+    rejected-execution-handler: CallerRunsPolicy  # 拒绝策略
+    waitForJobsToCompleteOnShutdown: true  # 线程池关闭的时候，是否等待所有任务都完成后，再销毁其他的 Bean，这样这些异步任务的销毁，就会先于数据库连接池对象的销毁

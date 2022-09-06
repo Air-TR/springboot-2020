@@ -1,7 +1,7 @@
 package com.tr.springboot.lock;
 
 /**
- * Lock锁研究系列：从账户取钱线程
+ * Lock 锁研究系列：从账户取钱线程
  *
  * @author TR
  * @version 1.0

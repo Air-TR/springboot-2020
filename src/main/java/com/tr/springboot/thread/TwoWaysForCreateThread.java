@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 创建线程的两种方式
+ *  1.继承 Thread 类，重写 run() 方法
+ *  2.实现 Runnable 接口，重写 run() 方法
  *
  * @author rtao
  * @date 2021/12/23 10:08
@@ -13,19 +15,24 @@ public class TwoWaysForCreateThread {
 
     public static void main(String[] args) {
         System.out.println("main thread start ===> " + LocalTime.now());
-        // 启动 ExtendsThread
+
+        /** 继承 Thread 类 */
         ExtendsThread extendsThread = new ExtendsThread();
         extendsThread.start();
-        // 启动 ImplementsRunnableThread
+
+        /** 实现 Runnable 接口 */
         ImplementsRunnableThread implementsThread = new ImplementsRunnableThread();
         new Thread(implementsThread).start();
+
         System.out.println("main thread over  ===> " + LocalTime.now());
     }
 
 }
 
+/**
+ * 1.继承 Thread 类，重写 run() 方法
+ */
 class ExtendsThread extends Thread {
-
     @Override
     public void run() {
         try {
@@ -36,11 +43,12 @@ class ExtendsThread extends Thread {
             e.printStackTrace();
         }
     }
-
 }
 
+/**
+ * 2.实现 Runnable 接口，重写 run() 方法
+ */
 class ImplementsRunnableThread implements Runnable {
-
     @Override
     public void run() {
         try {
@@ -51,5 +59,4 @@ class ImplementsRunnableThread implements Runnable {
             e.printStackTrace();
         }
     }
-
 }

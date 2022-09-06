@@ -3,6 +3,7 @@ package com.tr.springboot.thread.service.impl;
 import com.tr.springboot.thread.service.ThreadService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,7 +18,7 @@ public class ThreadServiceImpl implements ThreadService {
     public String methodA() {
         try {
             TimeUnit.SECONDS.sleep(1);
-            System.out.println("Finish A");
+            System.out.println("Finish A ==> " + LocalTime.now());
             return "A";
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -28,8 +29,8 @@ public class ThreadServiceImpl implements ThreadService {
     @Override
     public String methodB() {
         try {
-            TimeUnit.SECONDS.sleep(3);
-            System.out.println("Finish B");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Finish B ==> " + LocalTime.now());
             return "B";
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -40,8 +41,8 @@ public class ThreadServiceImpl implements ThreadService {
     @Override
     public String methodC() {
         try {
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Finish C");
+            TimeUnit.SECONDS.sleep(3);
+            System.out.println("Finish C ==> " + LocalTime.now());
             return "C";
         } catch (InterruptedException e) {
             e.printStackTrace();

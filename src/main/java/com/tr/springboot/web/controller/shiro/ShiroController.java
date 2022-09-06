@@ -58,7 +58,7 @@ public class ShiroController {
     }
 
     @GetMapping("/logout")
-    public String logout(){
+    public String logout() {
         SecurityUtils.getSubject().logout();
         return "登出成功，准备跳转登录页...";
     }

@@ -3,7 +3,7 @@ package com.tr.springboot.lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Lock锁研究系列：实体类
+ * Lock 锁研究系列：实体类
  *
  * @author TR
  * @version 1.0

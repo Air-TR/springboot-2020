@@ -1,14 +1,13 @@
 package com.tr.springboot.web.controller.test.async;
 
 import com.tr.springboot.web.dao.jpa.AccountJpa;
-import com.tr.springboot.web.service.SleepService;
 import com.tr.springboot.web.service.impl.SleepServiceImpl;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * 异步线程控制类
@@ -30,23 +29,33 @@ public class AsynchronousThreadController {
     @GetMapping("/asynchronous-thread/test")
     public String test() throws InterruptedException {
         long start = System.currentTimeMillis();
-        String s = "";
-        new Thread(() -> sleepService.sleep(1)).start();
+
+        final CountDownLatch latch = new CountDownLatch(3);
+
+
+        new Thread(() -> {
+            sleepService.sleep(1);
+            latch.countDown();
+        }).start();
+        new Thread(() -> {
+            sleepService.sleep(1);
+            latch.countDown();
+        }).start();
+        new Thread(() -> {
+            sleepService.sleep(1);
+            latch.countDown();
+        }).start();
+
+        latch.await();
+
+//        new Thread(() -> sleepService.sleep(1)).start();
 //        new Thread(() -> sleepService.sleep(2)).start();
 //        new Thread(() -> sleepService.sleep(3)).start();
-//        s += accountJpa.getOne(1).getName();
-//        s += accountJpa.getOne(2).getName();
-//        s += accountJpa.getOne(3).getName();
-//        s += accountJpa.getOne(4).getName();
-//        s += accountJpa.getOne(5).getName();
-//        s += accountJpa.getOne(6).getName();
-//        s += accountJpa.getOne(7).getName();
-//        s += accountJpa.getOne(8).getName();
-//        s += accountJpa.getOne(9).getName();
-//        s += accountJpa.getOne(10).getName();
+
         long end = System.currentTimeMillis();
         System.out.println("Time: " + (end - start) + " ms");
-        return s;
+
+        return "success";
     }
 
 }

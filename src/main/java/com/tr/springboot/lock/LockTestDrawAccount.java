@@ -1,7 +1,7 @@
 package com.tr.springboot.lock;
 
 /**
- * Lock锁研究系列：测试类
+ * Lock 锁研究系列：测试类
  *
  * @author TR
  * @version 1.0
