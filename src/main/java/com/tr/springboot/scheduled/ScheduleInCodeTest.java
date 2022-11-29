@@ -14,7 +14,7 @@
 //import java.text.ParseException;
 //
 ///**
-// * 自动定时任务触发（cron表达式在代码中指定）
+// * 自动定时任务触发（cron 表达式在代码中指定）
 // *
 // * @author rtao
 // * @date 2021/8/16 18:21

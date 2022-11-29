@@ -50,8 +50,8 @@ public class LogAspect {
     }
 
     /**
-     * @Around 环绕通知，就是可以在执行前后都使用，这个方法参数必须为ProceedingJoinPoint，proceed()方法就是被切面的方法，
-     * 上面四个方法可以使用JoinPoint，JoinPoint包含了类名，被切面的方法名，参数等信息。
+     * @Around 环绕通知，就是可以在执行前后都使用，这个方法参数必须为 ProceedingJoinPoint，proceed() 方法就是被切面的方法，
+     * 上面四个方法可以使用 JoinPoint，JoinPoint 包含了类名，被切面的方法名，参数等信息。
      */
     @Around("logAspect()")
     public void doAround(ProceedingJoinPoint joinPoint) throws Throwable{

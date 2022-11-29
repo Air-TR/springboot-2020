@@ -7,7 +7,7 @@
 //
 ///**
 // * 定时任务类
-// * 注：在启动类application上加入@EnableScheduling注解
+// * 注：在启动类 Application 上加入 @EnableScheduling 注解
 // *
 // * @author TR
 // * @version 1.0

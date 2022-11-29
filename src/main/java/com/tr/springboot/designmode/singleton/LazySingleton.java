@@ -2,6 +2,9 @@ package com.tr.springboot.designmode.singleton;
 
 /**
  * 懒汉单例实例（非线程安全）
+ *  其他 A、B、C、D、E 是线程安全的单例实现，
+ *  其中 LazySingletonD 是"双重校验锁实现单例模式"。
+ *
  *
  * @author TR
  * @version 1.0

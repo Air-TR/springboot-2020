@@ -8,8 +8,8 @@ package com.tr.springboot.lock.deadlock;
  */
 public class DeadLockDemo {
 
-    private static Object resource1 = new Object(); //资源 1
-    private static Object resource2 = new Object(); //资源 2
+    private static Object resource1 = new Object(); // 资源 1
+    private static Object resource2 = new Object(); // 资源 2
 
     public static void main(String[] args) {
         new Thread(() -> {

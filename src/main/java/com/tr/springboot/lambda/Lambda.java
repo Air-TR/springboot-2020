@@ -19,14 +19,19 @@ public class Lambda {
     public static void main(String[] args) {
         /** 集合去重 */
         distinct();
+
         /** 集合过滤 */
         filter();
+
         /** 删除集合中的某个元素 */
         deleteElementInList();
+
         /** 遍历集合 */
         iteratorList();
+
         /** 集合内元素排序 */
         sortList();
+
         /** 创建线程 */
         createThread();
     }
@@ -106,8 +111,8 @@ public class Lambda {
             }
         });
         */
-        list.sort((o1, o2) -> o1.getPrice().compareTo(o2.getPrice()));
-//        list.sort(Comparator.comparing(Item::getPrice)); // 与上行代码效果相同
+        list.sort(Comparator.comparing(Item::getPrice));
+//        list.sort((o1, o2) -> o1.getPrice().compareTo(o2.getPrice())); // 与上行代码效果相同
         list.forEach(System.out::println);
     }
 

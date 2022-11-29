@@ -29,12 +29,10 @@ public class Java8LambdaTester {
         System.out.println("10 / 5 = " + tester.operate(10, 5, division));
 
         // 不用括号
-        GreetingService greetService1 = message ->
-                System.out.println("Hello " + message);
+        GreetingService greetService1 = message -> System.out.println("Hello " + message);
 
         // 用括号
-        GreetingService greetService2 = (message) ->
-                System.out.println("Hello " + message);
+        GreetingService greetService2 = (message) -> System.out.println("Hello " + message);
 
         greetService1.sayMessage("Runoob");
         greetService2.sayMessage("Google");

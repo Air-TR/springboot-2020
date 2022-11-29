@@ -107,7 +107,7 @@ public class ShiroConfig {
         HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
         // 加密方式（SHA-256、MD5...）
         matcher.setHashAlgorithmName(shiroProperties.getHashAlgorithmName());
-        // Hash次数，这里的 Hash 次数要与存储时加密的 Hash 次数保持一致
+        // Hash 次数，这里的 Hash 次数要与存储时加密的 Hash 次数保持一致
         matcher.setHashIterations(shiroProperties.getHashIterations()); // 默认是 1，为 1 时可以不配置
         return matcher;
     }
