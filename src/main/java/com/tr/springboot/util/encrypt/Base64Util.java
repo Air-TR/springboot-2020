@@ -11,7 +11,7 @@ import org.apache.shiro.codec.Base64;
 public class Base64Util {
 
     public static void main(String[] args) {
-        String password = "123456";
+        String password = "a123456";
         String ciphertext = encodeBase64(password);
         System.out.println("密文：" + ciphertext);
 

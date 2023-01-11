@@ -6,10 +6,12 @@ import java.util.stream.Collectors;
 /**
  * Lambda 测试，代码来源：https://www.cnblogs.com/haixiang/p/11029639.html#1462250077
  * Lambda:
- *  删除集合中的某个元素
- *  遍历集合
- *  创建线程
+ *  集合过滤
+ *  集合去重
+ *  删除集合中某个元素
+ *  集合遍历
  *  集合内元素排序
+ *  创建线程
  *
  * @Author: rtao
  * @Date: 2020/10/30 15:21
@@ -17,16 +19,16 @@ import java.util.stream.Collectors;
 public class Lambda {
 
     public static void main(String[] args) {
-        /** 集合去重 */
-        distinct();
-
         /** 集合过滤 */
         filter();
 
-        /** 删除集合中的某个元素 */
+        /** 集合去重 */
+        distinct();
+
+        /** 删除集合中某个元素 */
         deleteElementInList();
 
-        /** 遍历集合 */
+        /** 集合遍历 */
         iteratorList();
 
         /** 集合内元素排序 */
@@ -34,15 +36,6 @@ public class Lambda {
 
         /** 创建线程 */
         createThread();
-    }
-
-    /**
-     * lambda 去重
-     */
-    private static void distinct() {
-        List<Integer> list = Arrays.asList(8, 3, 8, 3, 6, 5, 9, 5, 6, 7);
-        List<Integer> distinctList = list.stream().distinct().collect(Collectors.toList());
-        System.out.println(distinctList);
     }
 
     /**
@@ -55,10 +48,19 @@ public class Lambda {
     }
 
     /**
-     * Lambda 删除集合中的某个元素
+     * lambda 去重
+     */
+    private static void distinct() {
+        List<Integer> list = Arrays.asList(8, 3, 8, 3, 6, 5, 9, 5, 6, 7);
+        List<Integer> distinctList = list.stream().distinct().collect(Collectors.toList());
+        System.out.println(distinctList);
+    }
+
+    /**
+     * Lambda 删除集合中某个元素
      */
     private static void deleteElementInList() {
-        System.out.println(">>>> Lambda 删除集合中的某个元素 <<<<");
+        System.out.println(">>>> Lambda 删除集合中某个元素 <<<<");
         List<Object> list = new ArrayList<>();
         Collections.addAll(list, 1, 2, 3, 4, 5, "A", "B", "C");
         list.removeIf(ele -> ele.equals("B")); // 删除值为"B"的元素
@@ -67,7 +69,7 @@ public class Lambda {
     }
 
     /**
-     * Lambda 遍历集合
+     * Lambda 集合遍历
      */
     private static void iteratorList() {
         System.out.println(">>>> Lambda 遍历集合 <<<<");
@@ -78,19 +80,6 @@ public class Lambda {
                 System.out.println(element);
             }
         });
-    }
-
-    /**
-     * Lambda 创建线程
-     */
-    private static void createThread() {
-        System.out.println(">>>> Lambda 创建线程 <<<<");
-        Thread t = new Thread(() -> {
-            for (int i = 0; i < 10; i++) {
-                System.out.println(2 + ":" + i);
-            }
-        });
-        t.start();
     }
 
     /**
@@ -116,6 +105,18 @@ public class Lambda {
         list.forEach(System.out::println);
     }
 
+    /**
+     * Lambda 创建线程
+     */
+    private static void createThread() {
+        System.out.println(">>>> Lambda 创建线程 <<<<");
+        Thread t = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                System.out.println(2 + ":" + i);
+            }
+        });
+        t.start();
+    }
 
     private static class Item {
         private Integer id;

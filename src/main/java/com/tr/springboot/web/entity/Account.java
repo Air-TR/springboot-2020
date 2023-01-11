@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -15,6 +18,7 @@ public class Account implements Serializable {
     private Integer id;
 
     /** 用户名 */
+    @NotBlank(message = "用户名不能为空")
     private String name;
 
     /** 性别 */
@@ -24,6 +28,7 @@ public class Account implements Serializable {
     private Integer age;
 
     /** 余额 */
+    @NotNull
     private Double balance;
 
     public Integer getId() {

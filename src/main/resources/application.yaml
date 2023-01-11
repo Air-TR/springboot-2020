@@ -12,7 +12,8 @@ jasypt:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springboot-2020?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    # 以下配置明文见 -> JasyptCreate.java
+    url: ENC(HlFACI4CbfMzdKyf62F+G/9SCi5EsfneQnLjMRaRSeduPSh1dWa9QxtT7XmzZdXA3fioAQ5pU1FIQf4B9FPYISFn2xOeCWLmDkdUcE4jYgPWpoy6MCLam7Iw97xX77ZxkiTHQV2SE9M=)
     username: ENC(6YrBrC3DIPDhLs6pDblobg==) # 使用 jasypt 加密
     password: ENC(ZtkRoI6NnmHAhN8USO1DDA==) # 使用 jasypt 加密
 #  devtools:
