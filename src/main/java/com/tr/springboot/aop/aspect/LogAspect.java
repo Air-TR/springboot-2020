@@ -38,14 +38,14 @@ public class LogAspect {
     }
 
     /** @AfterReturning 在方法执行完返回结果后执行 */
-    @AfterReturning("logAspect()")
-    public void doAfterReturning(JoinPoint joinPoint){
+    @AfterReturning(value = "logAspect()", returning = "result")
+    public void doAfterReturning(JoinPoint joinPoint, Object result){
         System.out.println("doAfterReturning");
     }
 
     /** @AfterThrowing 在方法执行过程中抛出异常的时候执行 */
-    @AfterThrowing("logAspect()")
-    public void doAfterThrowing(JoinPoint joinPoint){
+    @AfterThrowing(value = "logAspect()", throwing = "exception")
+    public void doAfterThrowing(JoinPoint joinPoint, Exception exception){
         System.out.println("doAfterThrowing");
     }
 

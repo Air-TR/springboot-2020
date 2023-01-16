@@ -13,16 +13,25 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 以下配置明文见 -> JasyptCreate.java
+    # 本地配置
     url: ENC(HlFACI4CbfMzdKyf62F+G/9SCi5EsfneQnLjMRaRSeduPSh1dWa9QxtT7XmzZdXA3fioAQ5pU1FIQf4B9FPYISFn2xOeCWLmDkdUcE4jYgPWpoy6MCLam7Iw97xX77ZxkiTHQV2SE9M=)
     username: ENC(6YrBrC3DIPDhLs6pDblobg==) # 使用 jasypt 加密
     password: ENC(ZtkRoI6NnmHAhN8USO1DDA==) # 使用 jasypt 加密
+    # HuiBo 配置
+#    url: jdbc:mysql://127.0.0.1:3307/springboot-2020?useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    username: root
+#    password: 123456
+
 #  devtools:
 #    restart:
 #      enabled: true # 配置项目热部署（SpringBoot不配置也生效，只需要pom文件中的热部署配置）
+
   jpa:
     show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
   redis:
-    database: 1 # Redis数据库索引（默认为0），如果设置为1，那么存入的key-value都存放在select 1中
+    database: 1 # Redis 数据库索引（默认为 0），如果设置为 1，那么存入的 key-value 都存放在 select 1 中
     host: 127.0.0.1
     port: 6379
     max-wait: 30000 # 连接池最大阻塞等待时间（使用负值表示没有限制）
@@ -34,6 +43,7 @@ spring:
 #    cluster:        # 集群配置
 #    nodes: 127.0.0.1:6381,127.0.0.1:6382,127.0.0.1:6383,127.0.0.1:6384,127.0.0.1:6385,127.0.0.1:6386
 #    max-redirects: 2 # 最大重定向次数
+
   #rabbitmq
 #  rabbitmq:
 #    host: 127.0.0.1

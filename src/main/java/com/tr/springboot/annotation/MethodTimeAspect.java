@@ -5,10 +5,9 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
-
 /**
  * 创建自定义注解对应切面
- * 内容与 LogAspect类 切面类似
+ * 内容与 LogAspect.class 类似
  *
  * @author TR
  * @version 1.0
@@ -18,8 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class MethodTimeAspect {
 
-//    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..))") // 这边可以指定 controller/service 或者其他包
-//    public void logAspect(){}
+//    @Pointcut("execution(public * com.tr.springboot.aop.controller.*.*(..))") // 这边可以指定 controller、service 或其他包
+//    public void logAspect() {}
 
     @Around("@annotation(methodTime)")
     public Object around(ProceedingJoinPoint joinPoint, MethodTime methodTime) throws Throwable {
