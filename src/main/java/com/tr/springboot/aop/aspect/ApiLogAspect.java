@@ -17,6 +17,9 @@ public class ApiLogAspect {
 
     @AfterReturning(value = "@annotation(apiLog)", returning = "result")
     public void afterReturning(JoinPoint joinPoint, ApiLog apiLog, Object result) {
+        /** 切面方法类型 */
+        Object _this = joinPoint.getThis();
+        if (_this instanceof Object) {}
         /** 参数 */
         Object[] args = joinPoint.getArgs();
         /** 方法名称 */
