@@ -10,6 +10,11 @@ import java.util.List;
 
 public abstract class NetUtil {
 
+    public static void main(String[] args) throws UnknownHostException {
+        InetAddress inetAddress = getLocalHost();
+        System.out.println();
+    }
+
     /**
      * 获取本地网卡信息
      * @return
