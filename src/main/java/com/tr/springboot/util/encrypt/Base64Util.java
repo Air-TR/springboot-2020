@@ -1,6 +1,6 @@
 package com.tr.springboot.util.encrypt;
 
-import org.apache.shiro.codec.Base64;
+import java.util.Base64;
 
 /**
  * Base64 工具类
@@ -11,11 +11,11 @@ import org.apache.shiro.codec.Base64;
 public class Base64Util {
 
     public static void main(String[] args) {
-        String password = "a123456";
-        String ciphertext = encodeBase64(password);
+        String password = "111111";
+        String ciphertext = encode(password);
         System.out.println("密文：" + ciphertext);
 
-        String text = decodeBase64(ciphertext);
+        String text = decode(ciphertext);
         System.out.println("明文：" + text);
     }
 
@@ -24,8 +24,8 @@ public class Base64Util {
      * @param string
      * @return 密文
      */
-    public static String encodeBase64(String string) {
-        return Base64.encodeToString(string.getBytes());
+    public static String encode(String string) {
+        return Base64.getEncoder().encodeToString(string.getBytes());
     }
 
     /**
@@ -33,8 +33,8 @@ public class Base64Util {
      * @param string
      * @return 明文
      */
-    public static String decodeBase64(String string) {
-        return Base64.decodeToString(string.getBytes());
+    public static String decode(String string) {
+        return new String(Base64.getDecoder().decode(string.getBytes()));
     }
 
 }

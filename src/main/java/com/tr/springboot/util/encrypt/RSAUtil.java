@@ -25,6 +25,7 @@ public class RSAUtil {
 
     /** 用于封装随机产生的公钥与私钥 */
     private final static Map<String, String> keyMap = new HashMap<>();
+    private static final int KEY_SIZE = 2048; // RSA 算法使用的密钥长度至少应为 2048 位（随技术的进步，此数值未来还会加大）
     private final static String PUBLIC_KEY = "PUBLIC_KEY";
     private final static String PRIVATE_KEY = "PRIVATE_KEY";
 
@@ -49,14 +50,14 @@ public class RSAUtil {
      * @throws NoSuchAlgorithmException
      */
     public static void genKeyPair() throws NoSuchAlgorithmException {
-        // KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象
+        // KeyPairGenerator 类用于生成公钥和私钥对，基于 RSA 算法生成对象
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-        // 初始化密钥对生成器，密钥大小为96-1024位
-        keyPairGen.initialize(1024, new SecureRandom());
+        // RSA 算法使用的密钥长度至少应为 2048 位（随技术的进步，此数值未来还会加大）
+        keyPairGen.initialize(KEY_SIZE, new SecureRandom());
         // 生成一个密钥对，保存在keyPair中
         KeyPair keyPair = keyPairGen.generateKeyPair();
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
-        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
+        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();  // 得到私钥
         // 得到公钥字符串
         String publicKeyString = new String(Base64.encodeBase64(publicKey.getEncoded()));
         // 得到私钥字符串

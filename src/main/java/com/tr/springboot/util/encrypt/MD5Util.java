@@ -2,6 +2,8 @@ package com.tr.springboot.util.encrypt;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
 
+import java.security.NoSuchAlgorithmException;
+
 /**
  * MD5 工具类
  *  MD5 具有不可逆性
@@ -11,9 +13,10 @@ import org.apache.shiro.crypto.hash.Md5Hash;
  */
 public class MD5Util {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         String password = "123456";
         System.out.println("MD5 加密不带盐：" + md5(password));
+        System.out.println("MD5Kit 加密：" + MD5Kit.encrypt(password));
         System.out.println("MD5 加密，带盐：" + md5WithSalt(password, SALT));
     }
 
