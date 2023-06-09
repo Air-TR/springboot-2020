@@ -2,6 +2,8 @@ package com.tr.springboot.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * BigDecimal 计算工具类
@@ -10,6 +12,45 @@ import java.math.RoundingMode;
  * @date 2022/7/29 下午3:59
  */
 public class BigDecimalUtil {
+
+    public static void main(String[] args) {
+        NumberFormat currency = NumberFormat.getCurrencyInstance(); // 建立货币格式化引用
+        NumberFormat percent = NumberFormat.getPercentInstance();  // 建立百分比格式化引用
+        percent.setMaximumFractionDigits(3); // 百分比小数点最多3位
+
+        BigDecimal loanAmount = new BigDecimal("15000.48"); // 贷款金额
+        BigDecimal interestRate = new BigDecimal("0.008"); // 利率
+        BigDecimal interest = loanAmount.multiply(interestRate); // 利息
+
+        System.out.println("贷款金额:\t" + currency.format(loanAmount));
+        System.out.println("利率:\t" + percent.format(interestRate));
+        System.out.println("利息:\t" + currency.format(interest));
+
+
+        System.out.println(formatNumber(new BigDecimal("3.4321")));
+        System.out.println(formatNumber(new BigDecimal(0)));
+        System.out.println(formatNumber(new BigDecimal("0.00")));
+        System.out.println(formatNumber(new BigDecimal("0.001")));
+        System.out.println(formatNumber(new BigDecimal("0.006")));
+        System.out.println(formatNumber(new BigDecimal("0.206")));
+        System.out.println(formatNumber(new BigDecimal("15.3097")));
+        System.out.println(formatNumber(new BigDecimal("15.309753453453"), "#.0000"));
+    }
+
+    /**
+     * 数字格式化，保留固定位数小数（四舍五入），不足补零
+     */
+    public static String formatNumber(BigDecimal number, String pattern) {
+        DecimalFormat df = new DecimalFormat(pattern);
+        if (number.compareTo(BigDecimal.ZERO) >= 0 && number.compareTo(new BigDecimal(1)) < 0) {
+            return "0" + df.format(number);
+        } else {
+            return df.format(number).toString();
+        }
+    }
+    public static String formatNumber(BigDecimal number) {
+        return formatNumber(number, "#.00");
+    }
 
     /**
      * 默认除法运算精度
