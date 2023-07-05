@@ -32,16 +32,15 @@ public class RSAUtil {
     public static void main(String[] args) throws Exception {
         // 生成公钥和私钥
         genKeyPair();
-
-        String message = "abc+123456";
+        String key = "a772f8df0c0b425287c94c7a4e5cc988";
         System.out.println("随机生成的公钥长度为: " + keyMap.get(PUBLIC_KEY).length());
         System.out.println("随机生成的公钥为: " + keyMap.get(PUBLIC_KEY));
         System.out.println("随机生成的私钥长度为: " + keyMap.get(PRIVATE_KEY).length());
         System.out.println("随机生成的私钥为: " + keyMap.get(PRIVATE_KEY));
-        String messageEn = encrypt(message, keyMap.get(PUBLIC_KEY));
-        System.out.println("加密后的字符串为: " + messageEn);
-        String messageDe = decrypt(messageEn, keyMap.get(PRIVATE_KEY));
-        System.out.println("还原后的字符串为: " + messageDe);
+        String keyEncrypt = encrypt(key, keyMap.get(PUBLIC_KEY));
+        System.out.println("加密后的字符串为: " + keyEncrypt);
+        String keyDecrypt = decrypt(keyEncrypt, keyMap.get(PRIVATE_KEY));
+        System.out.println("还原后的字符串为: " + keyDecrypt);
     }
 
     /**

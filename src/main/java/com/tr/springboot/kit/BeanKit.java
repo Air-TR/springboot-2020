@@ -5,7 +5,9 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
 import java.beans.PropertyDescriptor;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,17 +18,31 @@ public class BeanKit extends BeanUtils {
 
     /**
      * copyProperties 忽略值为 null 的字段
-     * @param source
-     * @param target
      */
     public static void copyPropertiesIgnoreNull(Object source, Object target) {
         copyProperties(source, target, getNullPropertyNames(source));
     }
 
     /**
+     * 针对列表操作
+     */
+    public static <T, K> List<K> copyPropertiesIgnoreNull(List<T> sourceList, Class<K> targetClass) {
+        List<K> targetList = null;
+        try {
+            targetList = new ArrayList<>();
+            for (T source : sourceList) {
+                K target = targetClass.newInstance();
+                copyPropertiesIgnoreNull(source, target);
+                targetList.add(target);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return targetList;
+    }
+
+    /**
      * 返回实体的所有非 null 字段
-     * @param source
-     * @return
      */
     public static String[] getNullPropertyNames (Object source) {
         final BeanWrapper src = new BeanWrapperImpl(source);

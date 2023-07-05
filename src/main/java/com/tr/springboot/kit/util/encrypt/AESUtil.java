@@ -12,7 +12,7 @@ public class AESUtil {
 
     public static void main(String[] args) throws Exception {
         String plainText = "Hello World";
-        String key = "877f06335bce47d8";
+        String key = "a772f8df0c0b425287c94c7a4e5cc988";
         String encryptedText = encrypt(plainText, key);
         String decryptedText = decrypt(encryptedText, key);
         System.out.println("密文: " + encryptedText);

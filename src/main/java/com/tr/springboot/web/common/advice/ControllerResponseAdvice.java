@@ -27,8 +27,7 @@ public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> clazz) {
         // response 是 Result 类型，或者注释了 NotControllerResponseAdvice 都不进行包装
-        return !(methodParameter.getParameterType().isAssignableFrom(Result.class)
-                || methodParameter.hasMethodAnnotation(NotControllerResponseAdvice.class));
+        return !(methodParameter.getParameterType().isAssignableFrom(Result.class) || methodParameter.hasMethodAnnotation(NotControllerResponseAdvice.class));
     }
 
     @Override

@@ -2,6 +2,8 @@ package com.tr.springboot.kit;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * BigDecimal 计算工具类
@@ -10,6 +12,52 @@ import java.math.RoundingMode;
  * @date 2023/03/30
  */
 public class BigDecimalKit {
+
+    public static void main(String[] args) {
+        BigDecimal a = new BigDecimal(0.1);
+        System.out.println("a：" + a); // 输出：0.1000000000000000055511151231257827021181583404541015625
+        BigDecimal b = new BigDecimal("0.1");
+        System.out.println("b：" + b); // 输出：0.1
+        BigDecimal c = new BigDecimal(String.valueOf(0.1)); // 所以，BigDecimal 建议传 String 而不建议直接传数字
+        System.out.println("c：" + c); // 输出：0.1
+
+        NumberFormat currency = NumberFormat.getCurrencyInstance(); // 建立货币格式化引用
+        NumberFormat percent = NumberFormat.getPercentInstance();  // 建立百分比格式化引用
+        percent.setMaximumFractionDigits(3); // 百分比小数点最多3位
+
+        BigDecimal loanAmount = new BigDecimal("15000.48"); // 贷款金额
+        BigDecimal interestRate = new BigDecimal("0.008"); // 利率
+        BigDecimal interest = loanAmount.multiply(interestRate); // 利息
+
+        System.out.println("贷款金额:\t" + currency.format(loanAmount));
+        System.out.println("利率:\t" + percent.format(interestRate));
+        System.out.println("利息:\t" + currency.format(interest));
+
+        System.out.println(formatNumber(new BigDecimal("1.234")));
+        System.out.println(formatNumber(new BigDecimal("1.235")));
+        System.out.println(formatNumber(new BigDecimal("1.295")));
+        System.out.println(formatNumber(new BigDecimal("99.999999"), "#.0000"));
+    }
+
+    /**
+     * 数字格式化，四舍五入保留两位小数，不足补零
+     */
+    public static String formatNumber(BigDecimal number) {
+        return formatNumber(number, "#.00");
+    }
+
+    /**
+     * 数字格式化，保留固定位数小数（四舍五入），不足补零
+     *  本类 round() 方法也能四舍五入保留指定位数小数，但不足不会补零
+     */
+    public static String formatNumber(BigDecimal number, String pattern) {
+        DecimalFormat df = new DecimalFormat(pattern);
+        if (number.compareTo(BigDecimal.ZERO) >= 0 && number.compareTo(new BigDecimal(1)) < 0) {
+            return "0" + df.format(number);
+        } else {
+            return df.format(number).toString();
+        }
+    }
 
     /**
      * 默认除法运算精度
