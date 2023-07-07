@@ -1,9 +1,10 @@
 package com.tr.springboot.async;
 
 import com.tr.springboot.async.service.AsyncService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * 异步测试类
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AsyncController {
 
-    @Autowired
-    AsyncService asyncService;
+    @Resource
+    private AsyncService asyncService;
 
     @GetMapping("/async")
     public String async() throws InterruptedException {

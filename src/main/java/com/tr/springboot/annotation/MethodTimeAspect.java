@@ -21,7 +21,7 @@ public class MethodTimeAspect {
 //    public void logAspect() {}
 
     @Around("@annotation(methodTime)")
-    public Object around(ProceedingJoinPoint joinPoint, MethodTime methodTime) throws Throwable {
+    public Object around(ProceedingJoinPoint joinPoint, MethodTime methodTime) throws Throwable { // 这里的 MethodTime 就是自定义的注解
         System.out.println("MethodTimeAspect + 方法开始时间:" + System.currentTimeMillis());
         Object o = joinPoint.proceed();
         System.out.println("MethodTimeAspect + 方法结束时间:" + System.currentTimeMillis());

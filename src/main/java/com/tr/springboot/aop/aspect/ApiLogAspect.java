@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class ApiLogAspect {
 
     @AfterReturning(value = "@annotation(apiLog)", returning = "result")
-    public void afterReturning(JoinPoint joinPoint, ApiLog apiLog, Object result) {
+    public void afterReturning(JoinPoint joinPoint, ApiLog apiLog, Object result) { // 这里的 ApiLog 就是自定义的注解
         /** 切面方法类型 */
         Object _this = joinPoint.getThis();
         if (_this instanceof Object) {}

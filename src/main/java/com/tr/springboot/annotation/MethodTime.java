@@ -18,6 +18,7 @@ import java.lang.annotation.Target;
  * @author TR
  * @date 8/19/2020 10:50 AM
  */
+/** 注解实现 AOP 的方式建议参考 --> com.tr.springboot.aop.annotation.ApiLog */
 @Retention(RetentionPolicy.RUNTIME) // @Retention & @Target：https://blog.csdn.net/m0_37679452/article/details/81281310
 @Target({ElementType.METHOD, ElementType.TYPE}) // 注解类型：METHOD - 加在方法上，TYPE - 加在类上
 public @interface MethodTime { // 新建注解与新建接口类似，将 interface 改为 @interface 即可
