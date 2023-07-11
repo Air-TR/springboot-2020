@@ -33,7 +33,7 @@ public class FileUtil {
     }
 
     /**
-     * 私有构造方法，防止类的实例化，因为工具类不需要实例化。
+     * 私有构造方法，防止类的实例化，因为工具类不需要实例化
      */
     private FileUtil() {}
 
@@ -115,7 +115,7 @@ public class FileUtil {
      * 读取指定文件的内容
      *
      * @param path 为要读取文件的绝对路径
-     * @return 以行读取文件后的内容。
+     * @return 以行读取文件后的内容
      * @since 1.0
      */
     public static final String getFileContent(String path) throws IOException {
@@ -144,8 +144,8 @@ public class FileUtil {
     /**
      * 根据内容生成文件
      *
-     * @param path          要生成文件的绝对路径，
-     * @param modulecontent 文件的内容。
+     * @param path          要生成文件的绝对路径
+     * @param modulecontent 文件的内容
      * @return 真假值
      * @since 1.0
      */

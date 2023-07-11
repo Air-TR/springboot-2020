@@ -55,8 +55,9 @@ public class PgsqlJpaQueryKit {
     }
 
     /**
-     * sql 必须写要查询的 column，写 select * 报错，无法对应到 map，如 select name, age from user_info where id = '1'
-     *  注：最终 map 里的 key 全小写，即使别名使用大写字母如 userId，最终 key 也是小写 userid
+     * 注：最终 map 里的 key 全小写，即使别名使用大写字母如 userId，最终 key 也是小写 userid
+     *  如果写 select * 报错，尝试写列名查询，如 select name, age from user_info where id = '1'
+     *  实际测试结果：支持 select * 查询，正常返回 map 结果，如果报错，可能是因为某些字段无法自动转换，如 json
      */
     public HashMap getMap(String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql);
@@ -65,8 +66,9 @@ public class PgsqlJpaQueryKit {
     }
 
     /**
-     * sql 必须写要查询的 column，写 select * 报错，无法对应到 map，如 select name, age from user_info
-     *  注：最终 map 里的 key 全小写，即使别名使用大写字母如 userId，最终 key 也是小写 userid
+     * 注：最终 map 里的 key 全小写，即使别名使用大写字母如 userId，最终 key 也是小写 userid
+     *  如果写 select * 报错，尝试写列名查询，如 select name, age from user_info
+     *  实际测试结果：支持 select * 查询，正常返回 map 结果，如果报错，可能是因为某些字段无法自动转换，如 json
      */
     public List<HashMap> getMapList(String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql);
