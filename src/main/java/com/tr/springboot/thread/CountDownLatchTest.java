@@ -5,6 +5,7 @@ import com.tr.springboot.thread.service.impl.ThreadServiceImpl;
 
 import java.time.LocalTime;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * CountDownLatch 测试

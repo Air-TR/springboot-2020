@@ -12,7 +12,7 @@ public class WriteToFile {
 
     public static void main(String[] args) {
         try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("/Users/taorun/File/test.txt"));
+            BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"));
             out.write("写入内容：ABC");
             out.close();
             System.out.println("文件写入成功！");
