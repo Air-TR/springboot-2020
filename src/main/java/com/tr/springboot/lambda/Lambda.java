@@ -1,6 +1,10 @@
 package com.tr.springboot.lambda;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -57,10 +61,9 @@ public class Lambda {
     }
 
     /**
-     * Lambda 删除集合中某个元素
+     * lambda 删除集合中某个元素
      */
     private static void deleteElementInList() {
-        System.out.println(">>>> Lambda 删除集合中某个元素 <<<<");
         List<Object> list = new ArrayList<>();
         Collections.addAll(list, 1, 2, 3, 4, 5, "A", "B", "C");
         list.removeIf(ele -> ele.equals("B")); // 删除值为"B"的元素
@@ -69,10 +72,9 @@ public class Lambda {
     }
 
     /**
-     * Lambda 集合遍历
+     * lambda 集合遍历
      */
     private static void iteratorList() {
-        System.out.println(">>>> Lambda 遍历集合 <<<<");
         ArrayList<Integer> list = new ArrayList<>();
         Collections.addAll(list, 1, 2, 3, 4, 5);
         list.forEach(element -> {
@@ -83,10 +85,9 @@ public class Lambda {
     }
 
     /**
-     * Lambda 集合内元素排序
+     * lambda 集合内元素排序
      */
     private static void sortList() {
-        System.out.println(">>>> Lambda 集合内元素排序 <<<<");
         ArrayList<Item> list = new ArrayList<>();
         list.add(new Item(11, "半袖", 37.45));
         list.add(new Item(14, "风衣", 139.80));
@@ -106,10 +107,9 @@ public class Lambda {
     }
 
     /**
-     * Lambda 创建线程
+     * lambda 创建线程
      */
     private static void createThread() {
-        System.out.println(">>>> Lambda 创建线程 <<<<");
         Thread t = new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 System.out.println(2 + ":" + i);

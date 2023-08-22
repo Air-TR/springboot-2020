@@ -67,7 +67,7 @@ public class ListMapSort2 {
         }
     }
 
-    // .reversed() 降序排序，去掉 .reversed() 升序排序
+    // reversed() 降序排序，去掉 reversed() 升序排序
     private List<Map<String, Object>> sortList(List<Map<String, Object>> list){
         return list.stream().sorted(Comparator.comparing(ListMapSort2::comparingByAge).reversed()
                 .thenComparing(Comparator.comparing(ListMapSort2::comparingByHeight).reversed()))
