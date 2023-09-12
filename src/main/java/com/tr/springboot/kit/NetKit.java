@@ -1,18 +1,83 @@
 package com.tr.springboot.kit;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class NetKit {
 
-    public static void main(String[] args) throws Exception {
-        System.out.println(getMacAddress());
+    /**
+     * 获取公网 ip
+     */
+    public static String getPublicIp() {
+        String publicIP = null;
+        if (ipReachable("ifconfig.me")) {
+            URL url;
+            BufferedReader br = null;
+            try {
+                url = new URL("https://ifconfig.me/ip");
+                br = new BufferedReader(new InputStreamReader(url.openStream()));
+                publicIP = br.readLine();
+                br.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } finally {
+                if (Objects.nonNull(br)) {
+                    try {
+                        br.close();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+        return publicIP;
+    }
+
+    /**
+     * 获取内网 IP
+     */
+    public static String getInternalIp() {
+        try {
+            return getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            return null;
+        }
+    }
+
+    /**
+     * 获取设备名称
+     */
+    public static String getLocalHostName() {
+        try {
+            return getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            return "";
+        }
+    }
+
+    /**
+     * 监测传入 ip/域名 是否可抵达
+     */
+    public static Boolean ipReachable(String ip) {
+        try {
+            InetAddress inetAddress = InetAddress.getByName(ip);
+            return inetAddress.isReachable(3000); // 3000 毫秒
+        } catch (UnknownHostException e) {
+            System.out.println("无效的IP地址");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     /**
@@ -22,52 +87,6 @@ public class NetKit {
      */
     public static InetAddress getLocalHost() throws UnknownHostException {
         return InetAddress.getLocalHost();
-    }
-
-    /**
-     * 获取 IP（内网）
-     */
-    public static String getLocalHostAddress() {
-        try {
-            return getLocalHost().getHostAddress();
-        } catch (UnknownHostException e) {
-            return "";
-        }
-    }
-
-    /**
-     * 获取 Mac 地址
-     */
-    public static String getMacAddress() {
-        try {
-            InetAddress ipAddress = InetAddress.getLocalHost();
-            NetworkInterface networkInterface = NetworkInterface.getByInetAddress(ipAddress);
-            byte[] macAddressBytes = networkInterface.getHardwareAddress();
-
-            StringBuilder macAddress = new StringBuilder();
-            for (int i = 0; i < macAddressBytes.length; i++) {
-                macAddress.append(String.format("%02X%s", macAddressBytes[i], (i < macAddressBytes.length - 1) ? "-" : ""));
-            }
-            return macAddress.toString();
-        } catch (UnknownHostException | SocketException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * <p>获取Mac地址</p>
-     *
-     * @return List<String> Mac地址
-     * @throws Exception 默认异常
-     */
-    public static List<String> getMacAddressList() throws Exception {
-        /** 获取所有网络接口 */
-        List<InetAddress> inetAddresses = getLocalAllInetAddress();
-        if (!inetAddresses.isEmpty()) {
-            return inetAddresses.stream().map(e -> getMacByInetAddress(e)).distinct().collect(Collectors.toList());
-        }
-        return null;
     }
 
     /**
@@ -92,43 +111,6 @@ public class NetKit {
             }
         }
         return result;
-    }
-
-    /**
-     * <p>获取某个网络地址对应的Mac地址</p>
-     *
-     * @param inetAddr 网络地址
-     * @return String Mac地址
-     */
-    public static String getMacByInetAddress(InetAddress inetAddr) {
-        try {
-            byte[] mac = NetworkInterface.getByInetAddress(inetAddr).getHardwareAddress();
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < mac.length; i++) {
-                if (i != 0) {
-                    stringBuilder.append("-");
-                }
-                /** 将十六进制byte转化为字符串 */
-                String temp = Integer.toHexString(mac[i] & 0xff);
-                if (temp.length() == 1) {
-                    stringBuilder.append("0").append(temp);
-                } else {
-                    stringBuilder.append(temp);
-                }
-            }
-            return stringBuilder.toString().toUpperCase();
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static String getLocalHostName() {
-        try {
-            return getLocalHost().getHostName();
-        } catch (UnknownHostException e) {
-            return "";
-        }
     }
 
     /**

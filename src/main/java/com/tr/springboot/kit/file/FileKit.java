@@ -1,11 +1,16 @@
 package com.tr.springboot.kit.file;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
@@ -17,7 +22,56 @@ import java.util.Objects;
 /**
  * @Author: TR
  */
+@Slf4j
 public class FileKit {
+
+    /**
+     * 判断文件夹是否存在，不存在创建对应文件夹
+     * @param folderPath
+     * @return
+     */
+    public static Boolean checkAndMkdirs(String folderPath) {
+        File folder = new File(folderPath);
+        if (!folder.exists()) {
+            if (folder.mkdirs()) {
+                log.info("文件夹已创建成功");
+            } else {
+                log.error("无法创建文件夹");
+                return false;
+            }
+        } else {
+            log.info("文件夹已存在");
+        }
+        return true;
+    }
+
+    /**
+     * 写入内容到文件
+     * @param filePath
+     * @param content
+     * @throws IOException
+     */
+    public static final void writeToFile(String filePath, String content) throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
+        out.write(content);
+        out.close();
+    }
+
+    /**
+     * 读取文件内容
+     * @param filePath
+     * @return
+     * @throws IOException
+     */
+    public static final String readFromFile(String filePath) throws IOException {
+        BufferedReader in = new BufferedReader(new FileReader(filePath));
+        StringBuilder stringBuilder = new StringBuilder();
+        String str;
+        while (Objects.nonNull(str = in.readLine())) {
+            stringBuilder.append(str);
+        }
+        return stringBuilder.toString();
+    }
 
     /**
      * 上传文件

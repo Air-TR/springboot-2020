@@ -17,7 +17,7 @@ import java.util.List;
  * @Date: 2023/06/26
  */
 @Component
-public class JpaQueryKit {
+public class MysqlJpaQueryKit {
 
     @PersistenceContext
     private EntityManager entityManager;
