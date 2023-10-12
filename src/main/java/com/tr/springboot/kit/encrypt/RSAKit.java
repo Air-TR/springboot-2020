@@ -1,4 +1,4 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
@@ -21,7 +21,7 @@ import java.util.Map;
  * @author rtao
  * @date 2022/1/7 11:05
  */
-public class RSAUtil {
+public class RSAKit {
 
     /** 用于封装随机产生的公钥与私钥 */
     private final static Map<String, String> keyMap = new HashMap<>();

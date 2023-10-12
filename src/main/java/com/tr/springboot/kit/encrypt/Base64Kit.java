@@ -1,4 +1,4 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
 import java.util.Base64;
 
@@ -8,7 +8,7 @@ import java.util.Base64;
  * @author rtao
  * @date 2022/1/6 10:56
  */
-public class Base64Util {
+public class Base64Kit {
 
     public static void main(String[] args) {
         String password = "111111";

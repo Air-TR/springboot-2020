@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -34,7 +35,7 @@ public class HttpKit {
             StringBuilder response = null;
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 // 读取响应内容
-                reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
                 String line;
                 response = new StringBuilder();
                 while ((line = reader.readLine()) != null) {
@@ -74,7 +75,7 @@ public class HttpKit {
             // 设置请求方法类型
             connection.setRequestMethod("POST");
             // 设置请求头部信息
-            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             connection.setRequestProperty("Accept", "application/json");
             // 启用输出流
             connection.setDoOutput(true);
@@ -88,9 +89,9 @@ public class HttpKit {
             int responseCode = connection.getResponseCode();
             // 读取响应内容
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
             } else {
-                reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+                reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(), StandardCharsets.UTF_8));
             }
             // 将响应内容输出到控制台
             String line;

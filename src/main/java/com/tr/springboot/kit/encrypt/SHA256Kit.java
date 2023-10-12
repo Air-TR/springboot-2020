@@ -1,4 +1,4 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
  * @author rtao
  * @date 2022/1/14 16:47
  */
-public class SHA256Util {
+public class SHA256Kit {
 
     private final static String SHA_256 = "SHA-256";
     private final static String UTF_8 = "UTF-8";

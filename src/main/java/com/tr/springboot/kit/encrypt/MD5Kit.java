@@ -1,4 +1,4 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

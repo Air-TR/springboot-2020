@@ -1,5 +1,6 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
+import com.tr.springboot.kit.encrypt.MD5Kit;
 import org.apache.shiro.crypto.hash.Md5Hash;
 
 import java.security.NoSuchAlgorithmException;

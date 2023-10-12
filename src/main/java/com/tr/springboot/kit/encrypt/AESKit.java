@@ -1,4 +1,4 @@
-package com.tr.springboot.kit.util.encrypt;
+package com.tr.springboot.kit.encrypt;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -8,7 +8,7 @@ import java.util.Base64;
  * @Author: TR
  * @Date: 2023/6/1
  */
-public class AESUtil {
+public class AESKit {
 
     public static void main(String[] args) throws Exception {
         String plainText = "Hello World";
