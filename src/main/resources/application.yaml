@@ -27,8 +27,10 @@ spring:
 #      enabled: true # 配置项目热部署（SpringBoot不配置也生效，只需要pom文件中的热部署配置）
 
   jpa:
-    show-sql: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
   redis:
     database: 1 # Redis 数据库索引（默认为 0），如果设置为 1，那么存入的 key-value 都存放在 select 1 中
