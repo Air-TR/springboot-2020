@@ -1,4 +1,4 @@
-package com.tr.springboot;
+package com.tr.springboot.kit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

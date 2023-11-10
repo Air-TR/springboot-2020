@@ -136,7 +136,6 @@ public class MacAddressKit {
         } catch (UnknownHostException | SocketException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 

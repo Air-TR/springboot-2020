@@ -48,6 +48,9 @@ public class WindowsKit {
         return stringBuilder.toString().trim();
     }
 
+    /**
+     * 获取硬盘序列号
+     */
     public static String getHardDiskSerialNumber() {
         StringBuilder stringBuilder = new StringBuilder();
         String command = "wmic path win32_physicalmedia get serialnumber";
