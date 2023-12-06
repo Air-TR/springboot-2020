@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * String 工具类
  *
- * @author TR
+ * @Author TR
  * @date 2021/11/11 上午11:26
  */
 public class StringUtil {

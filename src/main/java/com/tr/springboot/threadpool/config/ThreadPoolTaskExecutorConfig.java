@@ -9,7 +9,7 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/9/1 下午2:55
  */
 @Configuration

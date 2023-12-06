@@ -9,7 +9,7 @@ import java.util.Scanner;
  * 输入：Ihave1nose2hands10fingers
  * 输出：0112Iaadeeefghhinnnorsssv
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/21 上午11:38
  */
 public class Test34 {

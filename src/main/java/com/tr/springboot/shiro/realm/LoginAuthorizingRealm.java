@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/7/6 上午11:37
  */
 public class LoginAuthorizingRealm extends AuthorizingRealm {

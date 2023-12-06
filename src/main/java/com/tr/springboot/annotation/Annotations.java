@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 自定义注解类Annotations
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 2:41 PM
  */

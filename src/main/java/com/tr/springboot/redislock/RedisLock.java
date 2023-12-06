@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 利用 redis 获取分布式锁
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/7 下午2:16
  * @link https://www.cnblogs.com/yjmyzz/p/distribution-lock-using-redis.html
  */

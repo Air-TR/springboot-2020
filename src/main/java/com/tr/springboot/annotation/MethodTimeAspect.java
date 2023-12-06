@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 创建自定义注解对应切面
  * 内容与 LogAspect.class 类似
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 10:49 AM
  */

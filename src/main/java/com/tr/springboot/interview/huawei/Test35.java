@@ -15,7 +15,7 @@ import java.util.Scanner;
  * 输入：正整数 N
  * 输出：一个 N 行的蛇形矩阵
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/21 上午11:45
  */
 public class Test35 {
@@ -28,7 +28,7 @@ public class Test35 {
             int t = 1; // 记录依次赋予的数组值
             for (int i = 0; i < n; i++) {
                 result[i] = new int[n - i]; // 数组第 i 行有 n-i 个元素
-                for (int j = 0; j < i + 1; j++) { //对第 i 个对角线赋值
+                for (int j = 0; j < i + 1; j++) { // 对第 i 个对角线赋值
                     result[i - j][j] = t;
                     t++;
                 }

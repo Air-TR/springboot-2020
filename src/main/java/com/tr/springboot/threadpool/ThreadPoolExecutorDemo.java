@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * ThreadPoolExecutor 使用示例
  *
- * @author TR
+ * @Author TR
  * @date 8/25/2020 2:17 PM
  */
 public class ThreadPoolExecutorDemo {

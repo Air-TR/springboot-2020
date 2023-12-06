@@ -11,7 +11,7 @@
 // * 消息监听者 Listener
 // *  使用注解 @RabbitListener(queues = “message”) 来监听 message 的消息队列，@RabbitHandler 来实现具体消费
 // *
-// * @author TR
+// * @Author TR
 // * @version 1.0
 // * @date 2020/8/25 下午7:33
 // */

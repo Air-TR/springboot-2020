@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * 解题思路：2 个空瓶 + 借 1 瓶，喝完把喝的那瓶还给老板，正好。所以，结果就是 n / 2。
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午2:55
  */
 public class Test22 {

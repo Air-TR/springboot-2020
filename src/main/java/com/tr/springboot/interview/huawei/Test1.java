@@ -10,7 +10,7 @@ import java.util.Scanner;
  *  输出：8
  *  说明：最后一个单词为 nowcoder，长度为 8
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午4:44
  */
 public class Test1 {

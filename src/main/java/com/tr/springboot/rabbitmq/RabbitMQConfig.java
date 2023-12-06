@@ -7,7 +7,7 @@
 ///**
 // * RabbitMQ 配置类
 // *
-// * @author TR
+// * @Author TR
 // * @version 1.0
 // * @date 2020/8/25 下午9:38
 // */

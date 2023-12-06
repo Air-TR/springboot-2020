@@ -1,7 +1,7 @@
 package com.tr.springboot.reflection;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/7/29 下午5:25
  */
 public class TargetObject {

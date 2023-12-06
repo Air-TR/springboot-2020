@@ -3,7 +3,7 @@ package com.tr.springboot.designmode.factory.video;
 /**
  * 抽象工厂类 AbstractVideoFactory
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/24/2020 2:26 PM
  */

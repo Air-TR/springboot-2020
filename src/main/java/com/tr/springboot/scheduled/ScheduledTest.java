@@ -9,7 +9,7 @@ import java.util.Date;
  * 定时任务类
  * 注：在启动类 Application 上加入 @EnableScheduling 注解
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 2:24 PM
  */

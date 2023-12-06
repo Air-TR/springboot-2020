@@ -10,7 +10,7 @@ import java.util.HashMap;
  * 普通接口类，与 AdviceController 做对比
  *  该类中的接口，不被 ControllerResponseAdvice 扫描，不会自动将返回结果包装成 Result 类型
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/24 下午6:11
  */
 @RestController

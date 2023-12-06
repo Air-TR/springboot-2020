@@ -3,7 +3,7 @@ package com.tr.springboot.designmode.factory;
 /**
  * 抽象工厂类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/24/2020 2:06 PM
  */

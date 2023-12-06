@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 很复杂，dp 动态规划。
  * 原题详见：https://www.nowcoder.com/exam/oj/ta?tpId=37 --> HJ16
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午10:16
  */
 public class Test16 {

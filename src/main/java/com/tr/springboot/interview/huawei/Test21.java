@@ -15,7 +15,7 @@ import java.util.Set;
  * 输入：YZANzhi1987
  * 输出：zabo9441987
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午11:46
  */
 public class Test21 {

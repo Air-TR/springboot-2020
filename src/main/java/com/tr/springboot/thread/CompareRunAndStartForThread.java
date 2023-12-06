@@ -6,7 +6,7 @@ import com.tr.springboot.thread.service.impl.ThreadServiceImpl;
 /**
  * 比较对线程来说，通过 run 和 start 方法启动的区别
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/7/2020 4:53 PM
  */

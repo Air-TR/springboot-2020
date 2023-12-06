@@ -1,7 +1,7 @@
 package com.tr.springboot.web.entity;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/10/2020 8:29 AM
  */

@@ -3,7 +3,7 @@ package com.tr.springboot.aop.cglib;
 /**
  * cglib 动态代理测试类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/3/2020 10:01 AM
  */

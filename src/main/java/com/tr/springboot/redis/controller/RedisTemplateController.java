@@ -25,7 +25,7 @@ public class RedisTemplateController {
     /**
      * 设置 Redis 缓存数据
      *
-     * @author TR
+     * @Author TR
      * @date 2022/1/10 下午5:28
      * @params [key, value]
      */
@@ -38,7 +38,7 @@ public class RedisTemplateController {
     /**
      * 根据 key 获取缓存数据
      *
-     * @author TR
+     * @Author TR
      * @date 2022/1/10 下午5:28
      * @params [id]
      */
@@ -50,7 +50,7 @@ public class RedisTemplateController {
     /**
      * 根据 key 删除缓存数据
      *
-     * @author TR
+     * @Author TR
      * @date 2022/1/10 下午5:29
      * @params [id]
      */

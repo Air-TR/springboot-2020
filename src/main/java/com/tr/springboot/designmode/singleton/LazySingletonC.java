@@ -4,7 +4,7 @@ package com.tr.springboot.designmode.singleton;
  * 第三种线程安全的懒汉式单例(C)
  * 同步延迟加载 — 使用内部类实现延迟加载
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/18 上午1:19
  */

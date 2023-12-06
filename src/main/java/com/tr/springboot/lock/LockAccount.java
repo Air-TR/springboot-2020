@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Lock 锁研究系列：实体类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/15 下午12:41
  */

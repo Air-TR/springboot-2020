@@ -24,7 +24,7 @@ import java.util.Scanner;
  * 输出：0
  *
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午8:29
  */
 public class Test28 {

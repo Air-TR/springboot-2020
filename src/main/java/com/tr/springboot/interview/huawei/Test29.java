@@ -17,7 +17,7 @@ import java.util.Scanner;
  *  3pb03bQUmR6h2Mx9675Rd5OlnKW9d
  *  a4vvhI45UT61fYqIZ6I4
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午8:40
  */
 public class Test29 {

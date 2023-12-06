@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/7/6 下午1:59
  */
 @Entity

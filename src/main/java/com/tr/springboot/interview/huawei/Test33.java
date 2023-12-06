@@ -19,7 +19,7 @@ import java.util.Scanner;
  * 输入：167969729
  * 输出：10.3.3.193
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/21 上午11:29
  */
 public class Test33 {

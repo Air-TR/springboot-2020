@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 重现 ABA 问题
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/25/2020 3:53 PM
  */

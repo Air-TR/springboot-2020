@@ -8,7 +8,7 @@ import java.lang.reflect.Proxy;
  * JDK代理类
  * JDK代理原理是使用反射机制
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/3/2020 9:42 AM
  */

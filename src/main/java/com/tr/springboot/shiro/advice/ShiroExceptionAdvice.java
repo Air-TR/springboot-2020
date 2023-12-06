@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/7/6 上午11:38
  */
 @RestControllerAdvice

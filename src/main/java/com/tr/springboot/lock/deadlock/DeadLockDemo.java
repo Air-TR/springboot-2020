@@ -3,7 +3,7 @@ package com.tr.springboot.lock.deadlock;
 /**
  * 死锁示例
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/2 下午2:28
  */
 public class DeadLockDemo {

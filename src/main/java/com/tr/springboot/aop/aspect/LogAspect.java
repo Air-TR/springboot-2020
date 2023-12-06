@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 日志切面类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 9:53 AM
  */

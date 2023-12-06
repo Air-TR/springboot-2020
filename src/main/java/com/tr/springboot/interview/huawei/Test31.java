@@ -19,7 +19,7 @@ import java.util.Scanner;
  * 输入：$bo*y gi!r#l
  * 输出：l r gi y bo
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午10:31
  */
 public class Test31 {

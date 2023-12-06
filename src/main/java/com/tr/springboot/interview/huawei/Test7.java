@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 输出描述：
  *  输出该数值的近似整数值
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午6:33
  */
 public class Test7 {

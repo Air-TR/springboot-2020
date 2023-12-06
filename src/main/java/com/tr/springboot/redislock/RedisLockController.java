@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  *  1.使用 simpleLock 会：T1 或 T2 线程没抢到锁，直接抛出预期的异常。
  *  2.使用 lock 会：T1 先抢到锁，经过 2 秒的处理后，锁释放，这时 T2 重试拿到了锁，继续处理，最终释放。
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/7 下午2:17
  */
 @RestController

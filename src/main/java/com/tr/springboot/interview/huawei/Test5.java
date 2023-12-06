@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  *  输入：1A0A（等同于 0x1A0A）
  *  输出：6666
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午6:09
  */
 public class Test5 {

@@ -10,7 +10,7 @@
 // * 消息发送者 Sender
 // *  使用 AmqpTemplate 将消息发送到消息队列 message 中去
 // *
-// * @author TR
+// * @Author TR
 // * @version 1.0
 // * @date 2020/8/25 下午7:31
 // */

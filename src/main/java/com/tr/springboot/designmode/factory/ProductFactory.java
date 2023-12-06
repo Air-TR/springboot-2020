@@ -4,7 +4,7 @@ package com.tr.springboot.designmode.factory;
  * 具体工厂类
  * 通过反射获取对象
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/24/2020 2:08 PM
  */

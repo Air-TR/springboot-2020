@@ -28,7 +28,7 @@ import java.util.Scanner;
  *      3
  *      bca
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午5:29
  */
 public class Test27 {

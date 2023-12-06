@@ -4,7 +4,7 @@ package com.tr.springboot.designmode.singleton;
  * 饿汉单例实例
  *  饿汉模式本身是线程安全的
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/18 上午12:58
  */

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /**
  * 被 ControllerResponseAdvice 扫描的接口，哪怕返回类型是 void，也会被封装成 Result 类型返回：{ "code": 0, "msg": "成功", "data": null }
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/25 上午9:24
  */
 //@RestControllerAdvice(basePackageClasses = {com.tr.springboot.web.controller.advice.AdviceController.class, com.tr.springboot.jpa.controller.CarController.class})

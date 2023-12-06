@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/7/6 上午11:37
  */
 @Configuration

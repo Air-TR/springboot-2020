@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 简单实现类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 2:45 PM
  */

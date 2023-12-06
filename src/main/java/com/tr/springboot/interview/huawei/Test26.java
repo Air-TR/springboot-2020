@@ -18,7 +18,7 @@ import java.util.Scanner;
  *  输入：A Famous Saying: Much Ado About Nothing (2012/8).
  *  输出：A aaAAbc dFgghh: iimM nNn oooos Sttuuuy (2012/8).
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午5:19
  */
 public class Test26 {

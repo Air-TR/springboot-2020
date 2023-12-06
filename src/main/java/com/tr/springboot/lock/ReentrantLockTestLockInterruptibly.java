@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * ReentrantLock：测试 lockInterruptibly() 方法
  * https://www.bbsmax.com/A/kmzLb8Mb5G/
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/16 下午7:35
  */

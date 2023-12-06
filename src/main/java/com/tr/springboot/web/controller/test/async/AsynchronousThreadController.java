@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * 异步线程控制类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/9/9 下午10:28
  */

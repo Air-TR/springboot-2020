@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * 利用反射，使注解可以使用
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 2:48 PM
  */

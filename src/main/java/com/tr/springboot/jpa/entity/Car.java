@@ -10,7 +10,7 @@ import java.io.Serializable;
  *  @Entity 说明这个 class 是实体类，并且使用默认的 ORM 规则，即 class 名即数据库表中表名，class 属性名即表中的字段名；
  *  如果想改变这种默认的 ORM 规则，就要使用 @Table 来改变 class 名与表名的映射规则，@Column 来改变 class 属性名与字段名的映射规则
  *
- * @author TR
+ * @Author TR
  * @date 2022/7/9 上午10:17
  */
 @Entity

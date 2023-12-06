@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * 但是！此题有时间复杂度限制，要求程序在 1s 内执行完成。
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午6:15
  */
 public class Test6 {

@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 /**
  * 用于事务测试：账户类
  *
- * @author TR
+ * @Author TR
  * @date 8/10/2020 4:05 PM
  */
 @Api(tags = "Account")

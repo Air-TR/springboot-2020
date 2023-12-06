@@ -28,7 +28,7 @@ import java.util.Scanner;
  * 说明：
  *  类似于【0.*.*.*】和【127.*.*.*】的IP地址不属于上述输入的任意一类，也不属于不合法ip地址，计数时请忽略
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午10:27
  */
 public class Test18 {

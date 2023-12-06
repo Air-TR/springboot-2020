@@ -7,7 +7,7 @@ import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/25/2020 10:52 AM
  */

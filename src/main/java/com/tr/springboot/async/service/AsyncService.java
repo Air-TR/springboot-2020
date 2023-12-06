@@ -4,7 +4,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/1/24 下午6:46
  */
 @Service
@@ -26,7 +26,7 @@ public class AsyncService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "ASYNC SUCCESS";
+        return "ASYNC SUCCESS"; // 这里不会返回，实际上调用方得到的是 null
     }
 
 }

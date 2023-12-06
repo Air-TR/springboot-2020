@@ -12,7 +12,7 @@ import java.util.concurrent.CyclicBarrier;
  * CyclicBarrier 要比 CountDownLatch 多 1
  * 比如：开三个线程，CountDownLatch 配 3，CyclicBarrier 要配 4。
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/10/2020 1:18 PM
  */

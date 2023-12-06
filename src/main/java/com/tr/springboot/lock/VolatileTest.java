@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * Volatile ：保证内存可见性；禁止指令重排序
  * https://blog.csdn.net/tomcyndi/article/details/79094324
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/17/2020 10:52 AM
  */

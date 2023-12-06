@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 研究 List Set Map 及其子类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/9/7 下午10:31
  */

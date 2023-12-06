@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 /**
  * Controller 统一异常处理
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/25 上午8:56
  */
 @RestControllerAdvice

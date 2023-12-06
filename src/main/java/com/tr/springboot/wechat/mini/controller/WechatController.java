@@ -33,9 +33,9 @@ public class WechatController {
         return WechatKit.getSessionKeyAndOpenid(Wechat.APP_ID, Wechat.APP_SECRET, code);
     }
 
+    @ApiOperation("微信通过 code 获取小程序端的用户信息")
     @SneakyThrows
     @PostMapping(value = "/wechat/getUserinfo")
-    @ApiOperation("微信通过code获取小程序端的用户信息")
     public ResponseEntity test1(@RequestParam String code) {
         WxMaUserService userService = wxMaService.getUserService();
         return ResponseEntity.ok(userService.getSessionInfo(code));

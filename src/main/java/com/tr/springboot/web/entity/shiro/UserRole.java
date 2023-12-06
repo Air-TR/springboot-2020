@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * userId + roleId 联合主键
  *
- * @author TR
+ * @Author TR
  * @date 2022/7/8 下午2:20
  */
 @Entity

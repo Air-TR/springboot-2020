@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/9/1 下午3:49
  */
 @Configuration

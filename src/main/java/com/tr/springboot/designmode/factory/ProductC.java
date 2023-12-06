@@ -1,7 +1,7 @@
 package com.tr.springboot.designmode.factory;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/24/2020 3:41 PM
  */

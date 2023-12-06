@@ -6,7 +6,7 @@ package com.tr.springboot.designmode.singleton;
  *  其中 LazySingletonD 是"双重校验锁实现单例模式"。
  *
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/18 上午1:01
  */

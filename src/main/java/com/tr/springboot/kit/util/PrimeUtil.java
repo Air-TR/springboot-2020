@@ -3,7 +3,7 @@ package com.tr.springboot.kit.util;
 /**
  * 质数
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/25/2020 3:43 PM
  */
@@ -16,7 +16,7 @@ public class PrimeUtil {
     /**
      * 判断是否是质数
      *
-     * @author TR
+     * @Author TR
      * @date 8/25/2020 3:45 PM
      * @params [num]
      */

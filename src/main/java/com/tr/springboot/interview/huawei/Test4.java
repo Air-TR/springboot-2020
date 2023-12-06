@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 输入一个字符串，请按长度为 8 拆分每个输入字符串并进行输出；
  * 长度不是 8 整数倍的字符串请在后面补数字 0，空字符串不处理。
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午5:55
  */
 public class Test4 {

@@ -11,7 +11,7 @@ import java.util.concurrent.*;
 /**
  * Thread 测试类
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/1 上午9:20
  */
 @RestController

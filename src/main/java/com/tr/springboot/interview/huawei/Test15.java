@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 输出描述：
  *  这个数转换成二进制后，输出 1 的个数
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午9:42
  */
 public class Test15 {

@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 开发一个错误记录功能，能够记录出错的代码所在的文件名称和行号。
  * 原题链接：https://www.nowcoder.com/exam/oj/ta?tpId=37 --> HJ19
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午11:17
  */
 public class Test19 {

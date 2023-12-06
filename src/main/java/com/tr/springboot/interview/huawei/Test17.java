@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
  * 输入：ABC;AKL;DA1;
  * 输出：0,0
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午10:23
  */
 public class Test17 {

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  *  5.同一类中 T 调 T
  *  6.不同类中 T 调 T
  *
- * @author TR
+ * @Author TR
  * @date 8/10/2020 4:06 PM
  */
 @Api(tags = "Transaction")

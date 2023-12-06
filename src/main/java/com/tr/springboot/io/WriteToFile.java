@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午10:58
  */
 public class WriteToFile {

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Redis 功能测试类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/11/23 下午10:41
  */
@@ -45,7 +45,7 @@ public class RedisController {
     /**
      * 清空所有 redis 缓存数据
      *
-     * @author TR
+     * @Author TR
      * @date 2022/1/10 下午6:22
      * @params []
      */

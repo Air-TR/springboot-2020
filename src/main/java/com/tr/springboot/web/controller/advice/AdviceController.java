@@ -11,7 +11,7 @@ import java.util.HashMap;
 /**
  * 该类中的接口，会被 ControllerResponseAdvice 扫描，自动将返回结果封装成 Result 类型返回
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/25 上午9:42
  */
 @Api(tags = "Advice")

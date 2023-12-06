@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  *  @Documented 记录在java文档中
  *  @Order 优先级，有默认属性
  *
- * @author TR
+ * @Author TR
  * @date 8/19/2020 10:50 AM
  */
 /** 注解实现 AOP 的方式建议参考 --> com.tr.springboot.aop.annotation.ApiLog */

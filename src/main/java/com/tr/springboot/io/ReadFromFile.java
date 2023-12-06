@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午11:01
  */
 public class ReadFromFile {

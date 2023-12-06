@@ -5,7 +5,7 @@ import com.tr.springboot.aop.service.AopService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 10:09 AM
  */

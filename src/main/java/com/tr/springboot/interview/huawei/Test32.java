@@ -12,7 +12,7 @@ import java.util.Scanner;
  * 输入：一个字符串
  * 输出：有效密码串的最大长度
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/21 上午11:12
  */
 public class Test32 {

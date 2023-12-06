@@ -1,7 +1,7 @@
 package com.tr.springboot.thread.service;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/25/2020 10:50 AM
  */

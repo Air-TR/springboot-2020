@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 输入：ABCD
  * 输出：DCBA
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午9:05
  */
 public class Test12 {

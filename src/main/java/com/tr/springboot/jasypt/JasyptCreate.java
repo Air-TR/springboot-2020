@@ -5,7 +5,7 @@ import org.jasypt.util.text.BasicTextEncryptor;
 /**
  * 对配置信息加密
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/29 下午2:37
  */
 public class JasyptCreate {
@@ -23,17 +23,5 @@ public class JasyptCreate {
         System.out.println("username: " + username); // 6YrBrC3DIPDhLs6pDblobg==
         System.out.println("password: " + password); // ZtkRoI6NnmHAhN8USO1DDA==
     }
-
-    /**
-     * Mac本地（密钥：SecretKey）
-     *  jdbc:mysql://127.0.0.1:3306/springboot-2020?useUnicode=true&characterEncoding=utf-8&useSSL=true
-     *  root & root
-     */
-
-    /**
-     * orion-3.10（密钥：Orion123456）
-     *  jdbc:mysql://192.168.3.10:3306/orion?serverTimezone=Asia/Shanghai
-     *  user & HBxy_123456@8717$aliy
-     */
 
 }

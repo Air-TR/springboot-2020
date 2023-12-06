@@ -8,7 +8,7 @@ import java.util.Date;
  * Synchronized 修饰静态方法
  * 参考网址：https://blog.csdn.net/qq_38011415/article/details/89047812
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/13 下午11:59
  */

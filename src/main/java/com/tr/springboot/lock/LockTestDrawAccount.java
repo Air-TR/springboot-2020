@@ -3,7 +3,7 @@ package com.tr.springboot.lock;
 /**
  * Lock 锁研究系列：测试类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/15 下午4:41
  */

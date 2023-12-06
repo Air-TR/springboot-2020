@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * 使用自定义注解 @Annotations 的类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 2:47 PM
  */

@@ -33,7 +33,7 @@ import java.util.Scanner;
  * 输入：123 15
  * 输出：88C4A
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午8:59
  */
 public class Test30 {

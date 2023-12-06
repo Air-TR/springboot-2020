@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * AOP测试控制类
  * 其实实现AOP最基础的只需要aspect包下的LogAspect类即可
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 8/19/2020 9:55 AM
  */

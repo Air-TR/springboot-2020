@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 public class CmdCaller {
     public static void main(String[] args) {
 //        try {
-//            // 创建ProcessBuilder对象，并指定工作目录
+//            // 创建 ProcessBuilder 对象，并指定工作目录
 //            ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", "cd /d D:/GitLab/bak && npm run build:win64");
 //            // 启动进程
 //            Process process = processBuilder.start();
@@ -29,7 +29,7 @@ public class CmdCaller {
 //        }
 
         try {
-            // 创建ProcessBuilder对象
+            // 创建 ProcessBuilder 对象
             ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", "npm run build:win64");
 
             // 设置工作目录（可选）

@@ -9,7 +9,7 @@ import java.io.Serializable;
  * roleId + permId 联合主键
  *  注：使用联合主键，bean类必须序列化
  *
- * @author TR
+ * @Author TR
  * @date 2022/7/8 下午2:20
  */
 @Entity

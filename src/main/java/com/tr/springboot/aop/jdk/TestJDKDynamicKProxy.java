@@ -3,7 +3,7 @@ package com.tr.springboot.aop.jdk;
 /**
  * jdk 动态代理测试类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/3/2020 9:47 AM
  */

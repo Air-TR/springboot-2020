@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/8/6 下午5:04
  */
 public class ReflectionTest {

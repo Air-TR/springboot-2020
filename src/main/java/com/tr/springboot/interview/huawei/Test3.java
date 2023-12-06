@@ -12,7 +12,7 @@ import java.util.TreeSet;
  * 输出描述：
  *  输出多行，表示输入数据处理后的结果。
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/14 下午5:25
  */
 public class Test3 {

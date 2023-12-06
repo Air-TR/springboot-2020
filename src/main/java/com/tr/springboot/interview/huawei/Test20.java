@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  *  2.包括大小写字母、数字、其它符号，以上四种至少三种
  *  3.不能有长度大于 2 的包含公共元素的子串重复（注：其他符号不含空格或换行）
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 上午11:28
  */
 public class Test20 {

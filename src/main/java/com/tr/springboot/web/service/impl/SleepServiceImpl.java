@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/9/9 下午10:40
  */

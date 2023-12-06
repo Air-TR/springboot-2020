@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
  *
  * 本类代码详解及如何修改使本类代码能保证原子性见：有道云笔记 - 并发/关键字/volatile 关键字
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/19 下午2:43
  */
 public class VolatoleNotAtomicityDemo {

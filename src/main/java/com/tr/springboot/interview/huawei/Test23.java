@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 输入：aabcddd
  * 输出：aaddd
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午4:14
  */
 public class Test23 {

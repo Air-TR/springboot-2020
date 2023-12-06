@@ -8,7 +8,7 @@ import java.text.NumberFormat;
 /**
  * BigDecimal 计算工具类
  *
- * @author TR
+ * @Author TR
  * @date 2023/03/30
  */
 public class BigDecimalKit {

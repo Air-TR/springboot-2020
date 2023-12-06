@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 /**
  * cglib 代理类
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/3/2020 9:57 AM
  */

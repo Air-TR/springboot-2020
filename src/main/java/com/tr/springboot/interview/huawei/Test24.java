@@ -19,7 +19,7 @@ import java.util.Scanner;
  * 说明：
  *  由于不允许改变队列元素的先后顺序，所以最终剩下的队列应该为 186 200 160 130 或 150 200 160 130
  *
- * @author TR
+ * @Author TR
  * @date 2022/9/15 下午4:59
  */
 public class Test24 {

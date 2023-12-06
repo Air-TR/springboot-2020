@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * ReentrantLock 锁测试
  * https://baijiahao.baidu.com/s?id=1648624077736116382&wfr=spider&for=pc
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/16 下午5:52
  */

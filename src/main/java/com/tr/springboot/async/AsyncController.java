@@ -23,7 +23,7 @@ public class AsyncController {
         long start = System.currentTimeMillis();
         Thread.sleep(500);
         asyncService.voidAsync(); // 异步执行
-        String res = asyncService.returnAsync(); // 异步执行
+        String res = asyncService.returnAsync(); // 异步执行，得到的 res 是 null
         System.out.println(res); // 输出结果为 null
         long end = System.currentTimeMillis();
         return "执行：" + (end - start) + "ms";

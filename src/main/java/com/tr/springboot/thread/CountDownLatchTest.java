@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * CountDownLatch 测试
  * 主线程等待其他（多个）线程执行完成再继续执行
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 9/10/2020 1:07 PM
  */

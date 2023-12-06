@@ -4,7 +4,7 @@ package com.tr.springboot.designmode.singleton;
  * 第二种线程安全的懒汉式单例(B)
  * 同步延迟加载 — synchronized块
  *
- * @author TR
+ * @Author TR
  * @version 1.0
  * @date 2020/8/18 上午1:15
  */

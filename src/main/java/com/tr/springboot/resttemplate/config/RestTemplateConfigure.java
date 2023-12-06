@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * 以下配置，使得 RestTemplate 可以通过普通 URL 调用
  *
- * @author TR
+ * @Author TR
  * @date 2022/6/25 下午3:27
  */
 @Configuration

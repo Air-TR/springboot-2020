@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 
 /**
- * @author TR
+ * @Author TR
  * @date 2022/6/25 下午3:40
  */
 @RestController
