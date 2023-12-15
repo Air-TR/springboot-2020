@@ -4,6 +4,8 @@ import org.apache.commons.lang3.time.DateUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -55,6 +57,40 @@ public class DateKit extends DateUtils {
 
     public static String getTime() {
         return format(new Date(), DateKit.TIME_FORMAT);
+    }
+
+    /**
+     * 根据日期获取星期几
+     * @param dateStr：只接收 yyyy-MM-dd 格式
+     * @return MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY
+     */
+    public static DayOfWeek getWeekDay(String dateStr) { // 只接收类型 yyyy-MM-dd
+        LocalDate date = LocalDate.parse(dateStr);
+        return date.getDayOfWeek();
+    }
+
+    /**
+     * 根据日期获取星期几
+     * @param dateStr：只接收 yyyy-MM-dd 格式
+     * @return 1,2,3,4,5,6,7（就是从 1 开始，不是从 0 开始）
+     */
+    public static Integer getWeekInt(String dateStr) {
+        LocalDate date = LocalDate.parse(dateStr);
+        return date.getDayOfWeek().getValue();
+    }
+
+    /**
+     * 获取今天星期几 —— DayOfWeek
+     */
+    public static DayOfWeek getTodayWeekDay() {
+        return LocalDate.now().getDayOfWeek();
+    }
+
+    /**
+     * 获取今天星期几 —— 1,2,3,4,5,6,7
+     */
+    public static Integer getTodayWeekInt() {
+        return getTodayWeekDay().getValue();
     }
 
 }

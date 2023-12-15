@@ -24,6 +24,8 @@ public class MysqlJpaQueryKit {
 
     /**
      * NativeQuery 写普通 sql，如：select * from user_info where user_id = 1
+     * 注：实测发现 classType 只能传被 @Entity 注释的实体类，否则会报：
+     *  org.hibernate.MappingException: Unknown entity: com.tr.controller.vo.XxxVo
      */
     public <T> T findOne(Class<T> classType, String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql, classType);
@@ -57,6 +59,8 @@ public class MysqlJpaQueryKit {
     /**
      * sql 必须写要查询的 column，写 select * 报错，无法对应到 map，如 select name, age from user_info where id = '1'
      *  注：最终 map 里的 key 全小写，即使别名使用大写字母如 userId，最终 key 也是小写 userid
+     *
+     *  —— 20231207：实测返回 map 里 key 并非全小写，userId 返回还是 userId
      */
     public HashMap getMap(String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql);

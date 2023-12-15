@@ -24,6 +24,8 @@ public class PgsqlJpaQueryKit {
 
     /**
      * NativeQuery 写普通 sql，如：select * from user_info where user_id = 1
+     * 注：实测发现 classType 只能传被 @Entity 注释的实体类，否则会报：
+     *  org.hibernate.MappingException: Unknown entity: com.tr.controller.vo.XxxVo
      */
     public <T> T findOne(Class<T> classType, String sql) {
         Query nativeQuery = entityManager.createNativeQuery(sql, classType);
