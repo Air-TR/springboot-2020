@@ -1,5 +1,6 @@
 package com.tr.springboot.kit.file;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
@@ -17,32 +18,37 @@ import java.util.Objects;
 @Slf4j
 public class ReadAndWriteFileKit {
 
+    public static void main(String[] args) throws IOException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("url", "https://blog.51cto.com/u_12959/6557665");
+        writeToFile("D:/hbmes/scada-exe/app.json", jsonObject.toJSONString());
+    }
+
     /**
      * 读取文件内容
-     * @param filePath
-     * @return
-     * @throws IOException
      */
-    public static final String readFromFile(String filePath) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader(filePath));
+    public static final String readFromFile(String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
-        String str;
-        while (Objects.nonNull(str = in.readLine())) {
-            stringBuilder.append(str);
+        try (BufferedReader in = new BufferedReader(new FileReader(filePath))) {
+            String str;
+            while (Objects.nonNull(str = in.readLine())) {
+                stringBuilder.append(str);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return stringBuilder.toString();
     }
 
     /**
      * 写入内容到文件
-     * @param filePath
-     * @param content
-     * @throws IOException
      */
-    public static final void writeToFile(String filePath, String content) throws IOException {
-        BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
-        out.write(content);
-        out.close();
+    public static final void writeToFile(String filePath, String content) {
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(filePath))) {
+            out.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
