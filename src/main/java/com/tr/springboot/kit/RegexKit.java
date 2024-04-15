@@ -1,9 +1,15 @@
 package com.tr.springboot.kit;
 
+import java.util.regex.Pattern;
+
 /**
  * @Author TR
  */
 public class RegexKit {
+
+    public static void main(String[] args) {
+        System.out.println(Pattern.matches("\\w{5,}", "jame534dfg"));
+    }
 
     /** 手机号码 */
     public static final String PHONE = "^1[34578]\\d{9}$";
