@@ -6,7 +6,7 @@ package com.tr.springboot.clone;
  * @author rtao
  * @date 2021/12/29 16:48
  */
-public class StudentShallowClone implements Cloneable{
+public class StudentShallowClone implements Cloneable {
 
     public static void main(String args[]) {
         StudentShallowClone stu1 = new StudentShallowClone();
