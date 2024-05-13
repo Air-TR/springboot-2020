@@ -19,11 +19,11 @@ public class Java8DateTester {
      * ZonedDateTime：完整的日期时间，包含时区和相对UTC或格林威治的视察
      *
      * ZoneOffSet,ZoneId：操作时区
-     * DateTimeFormatter:格式化时间
-     * LocalDate等许多类为 final 线程安全不可变， plusHour withDay等操作后要用新的对象来接收
+     * DateTimeFormatter：格式化时间
+     * LocalDate 等许多类为 final 线程安全不可变， plusHour withDay 等操作后要用新的对象来接收
      */
     public static void main(String[] args) {
-        /** Date和LocalDate的转换: https://blog.csdn.net/hspingcc/article/details/73332252 */
+        /** Date 和 LocalDate 的转换: https://blog.csdn.net/hspingcc/article/details/73332252 */
         Date date = new Date();
         System.out.println(date); // Fri Oct 30 15:47:46 CST 2020
 
@@ -42,9 +42,9 @@ public class Java8DateTester {
         } else System.out.println("日期比较不同");
 
         /* MonthDay 和 YearMonth 用来检查某一天是不是生日这种周期性时间 */
-        MonthDay myBithday = MonthDay.of(birthday.getMonth(), birthday.getDayOfMonth()); // 等同于 MonthDay.from(birthday);
+        MonthDay myBirthday = MonthDay.of(birthday.getMonth(), birthday.getDayOfMonth()); // 等同于 MonthDay.from(birthday);
         MonthDay currentMonDay = MonthDay.from(today);
-        if (myBithday.equals(currentMonDay)) {
+        if (myBirthday.equals(currentMonDay)) {
             System.out.println("今天是你的生日");
         } else System.out.println("今天不是你的生日");
 
@@ -97,7 +97,7 @@ public class Java8DateTester {
         System.out.println("你的生日距今: " + between.getYears() + "年" + between.getMonths() + "月" + between.getDays() + "天"); // 25年3月26天
 
         /* 包含时差信息的日期和时间
-         *  ZoneOffset 表示时差 印度与GMT或者UTC飙车事件时差+5:30
+         *  ZoneOffset 表示时差，印度与 GMT 或者 UTC 时差 +5:30
          * */
         LocalDateTime dateTime = LocalDateTime.now(); // 2020-10-30T16:43:45.455
         ZoneOffset offset = ZoneOffset.of("+05:30");
