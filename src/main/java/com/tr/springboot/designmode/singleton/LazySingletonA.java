@@ -2,7 +2,7 @@ package com.tr.springboot.designmode.singleton;
 
 /**
  * 第一种线程安全的懒汉式单例(A)
- * 同步延迟加载 — synchronized方法
+ * 同步延迟加载 — synchronized 方法
  *
  * @Author TR
  * @version 1.0
@@ -12,8 +12,7 @@ public class LazySingletonA {
 
     private static LazySingletonA singleton;
 
-    private LazySingletonA() {
-    }
+    private LazySingletonA() {}
 
     /**
      * 使用 synchronized 修饰，临界资源的同步互斥访问

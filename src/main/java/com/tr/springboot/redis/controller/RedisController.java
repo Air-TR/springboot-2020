@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
 
-
 /**
  * Redis 功能测试类
  *
@@ -25,7 +24,6 @@ public class RedisController {
 
     @Resource
     AccountJpa accountJpa;
-
 
     @Cacheable(value = "account")
     @GetMapping("/account/{gender}")
