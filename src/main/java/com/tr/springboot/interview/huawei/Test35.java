@@ -1,6 +1,5 @@
 package com.tr.springboot.interview.huawei;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
