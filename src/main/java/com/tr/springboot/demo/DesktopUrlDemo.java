@@ -1,4 +1,4 @@
-package com.tr.springboot.test;
+package com.tr.springboot.demo;
 
 import java.awt.Desktop;
 import java.net.URL;
@@ -6,7 +6,7 @@ import java.net.URL;
 /**
  * @Author: TR
  */
-public class DesktopUrlTest {
+public class DesktopUrlDemo {
 
     public static void main(String[] args) throws Exception {
         Desktop desktop = Desktop.getDesktop();

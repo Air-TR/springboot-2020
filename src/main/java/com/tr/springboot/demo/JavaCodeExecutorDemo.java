@@ -1,4 +1,4 @@
-package com.tr.springboot;
+package com.tr.springboot.demo;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -13,7 +13,7 @@ import java.nio.file.Paths;
  * @Author: TR
  * @Date: 2023/7/19
  */
-public class JavaCodeExecutor {
+public class JavaCodeExecutorDemo {
 
     private static String className = "Test20230719001";
 

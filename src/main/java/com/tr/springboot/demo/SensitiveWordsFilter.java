@@ -1,4 +1,4 @@
-package com.tr.springboot;
+package com.tr.springboot.demo;
 
 /**
  * 敏感词过滤

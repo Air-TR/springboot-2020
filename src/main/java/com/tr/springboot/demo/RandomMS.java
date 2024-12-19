@@ -1,4 +1,4 @@
-package com.tr.springboot;
+package com.tr.springboot.demo;
 
 import java.util.ArrayList;
 import java.util.List;
