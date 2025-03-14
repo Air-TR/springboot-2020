@@ -41,7 +41,8 @@ public class SplitTimeDemo {
 
             if (segmentStart.isBefore(segmentEnd)) {
                 Duration duration = Duration.between(segmentStart, segmentEnd);
-                map.put(currentDateTime, duration.toSeconds());
+//                map.put(currentDateTime, duration.toSeconds()); // JDK 8
+                map.put(currentDateTime, duration.getSeconds()); // JDK 11
             }
 
             // 移动到下一个小时，必要时根据日期变化进行调整

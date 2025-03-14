@@ -1,4 +1,4 @@
-package com.tr.springboot.io;
+package com.tr.springboot.file;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
